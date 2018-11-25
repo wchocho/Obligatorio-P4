@@ -14,3 +14,33 @@
 
 1543084213 source:c:\users\rperera\documents\codeblocks\obligatoriop4\hechizosbruja.cpp
 
+1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\bruja.cpp
+	"Bruja.h"
+
+1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\bruja.h
+	"Fecha.h"
+	"String.h"
+	"HechizosBruja.h"
+
+1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\fecha.h
+
+1543075108 c:\users\admin.portable\documents\github\obligatorio-p4\string.h
+
+1543184166 c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.h
+	"Hechizo.h"
+
+1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.h
+
+1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\especial.cpp
+
+1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\fecha.cpp
+
+1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.cpp
+
+1543075106 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.cpp
+
+1543075108 source:c:\users\admin.portable\documents\github\obligatorio-p4\main.cpp
+	<iostream>
+
+1543075108 source:c:\users\admin.portable\documents\github\obligatorio-p4\string.cpp
+

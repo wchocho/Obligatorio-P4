@@ -28,7 +28,7 @@ class String{
         void print();
         int strlen(char * s);
         void strcpy(char * s, char * & s2);
-        int strcmp(String s, String s2);
+        int strcmp(String, String);
 
 };
 

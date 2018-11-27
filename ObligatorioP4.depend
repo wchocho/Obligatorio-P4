@@ -1,46 +1,56 @@
 # depslib dependency file v1.0
-1543067893 source:c:\users\rperera\documents\codeblocks\obligatoriop4\bruja.cpp
+1543357224 source:c:\users\rperera\documents\codeblocks\obligatoriop4\bruja.cpp
+	"Bruja.h"
 
-1353751060 source:c:\users\rperera\documents\codeblocks\obligatoriop4\main.cpp
-	<iostream>
+1543269051 source:c:\users\rperera\documents\codeblocks\obligatoriop4\main.cpp
+	<stdio.h>
+	"Menu.h"
+	"Utiles.h"
 
-1543068212 source:c:\users\rperera\documents\codeblocks\obligatoriop4\string.cpp
+1543356791 source:c:\users\rperera\documents\codeblocks\obligatoriop4\string.cpp
+	"String.h"
+	<stdio.h>
 
-1543068315 source:c:\users\rperera\documents\codeblocks\obligatoriop4\fecha.cpp
+1543357894 source:c:\users\rperera\documents\codeblocks\obligatoriop4\fecha.cpp
+	"Fecha.h"
+	<stdio.h>
 
 1543084174 source:c:\users\rperera\documents\codeblocks\obligatoriop4\especial.cpp
 
-1543084139 source:c:\users\rperera\documents\codeblocks\obligatoriop4\hechizo.cpp
+1543353010 source:c:\users\rperera\documents\codeblocks\obligatoriop4\hechizo.cpp
+	"Hechizo.h"
 
-1543084213 source:c:\users\rperera\documents\codeblocks\obligatoriop4\hechizosbruja.cpp
+1543353266 source:c:\users\rperera\documents\codeblocks\obligatoriop4\hechizosbruja.cpp
+	"HechizosBruja.h"
 
-1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\bruja.cpp
-	"Bruja.h"
-
-1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\bruja.h
-	"Fecha.h"
+1543358277 c:\users\rperera\documents\codeblocks\obligatoriop4\bruja.h
 	"String.h"
 	"HechizosBruja.h"
 
-1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\fecha.h
+1543068330 c:\users\rperera\documents\codeblocks\obligatoriop4\fecha.h
 
-1543075108 c:\users\admin.portable\documents\github\obligatorio-p4\string.h
+1543356767 c:\users\rperera\documents\codeblocks\obligatoriop4\string.h
 
-1543184166 c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.h
+1543357165 c:\users\rperera\documents\codeblocks\obligatoriop4\hechizosbruja.h
 	"Hechizo.h"
 
-1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.h
+1543352999 c:\users\rperera\documents\codeblocks\obligatoriop4\hechizo.h
+	"String.h"
 
-1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\especial.cpp
+1543265562 c:\users\rperera\documents\codeblocks\obligatoriop4\menu.h
+	"String.h"
 
-1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\fecha.cpp
+1543265652 c:\users\rperera\documents\codeblocks\obligatoriop4\utiles.h
 
-1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.cpp
+1543356718 source:c:\users\rperera\documents\codeblocks\obligatoriop4\menu.cpp
+	"Menu.h"
+	"Utiles.h"
+	"String.h"
+	<stdio.h>
 
-1543075106 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.cpp
-
-1543075108 source:c:\users\admin.portable\documents\github\obligatorio-p4\main.cpp
-	<iostream>
-
-1543075108 source:c:\users\admin.portable\documents\github\obligatorio-p4\string.cpp
+1543265685 source:c:\users\rperera\documents\codeblocks\obligatoriop4\utiles.cpp
+	"Utiles.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
 

@@ -35,18 +35,25 @@
 		<Unit filename="Bruja.cpp" />
 		<Unit filename="Bruja.h" />
 		<Unit filename="Brujas.h" />
+		<Unit filename="Comun.cpp" />
 		<Unit filename="Comun.h" />
 		<Unit filename="Especial.cpp" />
 		<Unit filename="Especial.h" />
+		<Unit filename="Fachada.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Hechizo.cpp" />
 		<Unit filename="Hechizo.h" />
 		<Unit filename="HechizosBruja.cpp" />
 		<Unit filename="HechizosBruja.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
+		<Unit filename="Suprema.cpp" />
 		<Unit filename="Suprema.h" />
+		<Unit filename="Utiles.cpp" />
+		<Unit filename="Utiles.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -1,5 +1,6 @@
 #ifndef COMUN_H_INCLUDED
 #define COMUN_H_INCLUDED
+#include "Bruja.h"
 
 class Comun: public Bruja{
     private:
@@ -9,8 +10,8 @@ class Comun: public Bruja{
     public:
         Comun();
         Comun(int, String, HechizosBruja, String, bool);
-        int regionOrigen();
-        bool vuelaEscoba();
+        String getRegionOrigen();
+        bool getVuelaEscoba();
         String getTipoBruja();
         int calcularPuntos();
 

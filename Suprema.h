@@ -1,5 +1,7 @@
 #ifndef SUPREMA_H_INCLUDED
 #define SUPREMA_H_INCLUDED
+#include "Bruja.h"
+#include "Fecha.h"
 
 class Suprema: public Bruja{
     private:
@@ -8,9 +10,9 @@ class Suprema: public Bruja{
 
     public:
         Suprema();
-        Bruja(int, String, HechizosBruja, Fecha, int);
-        int getFechaNacimiento();
-        int cantPoderes();
+        Suprema(int, String, HechizosBruja, Fecha, int);
+        Fecha getFechaNacimiento();
+        int getCantPoderes();
         String getTipoBruja();
         int calcularPuntos();
 

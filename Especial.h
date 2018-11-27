@@ -6,9 +6,9 @@ public class Especial{
         int anioManifiesto;
         String descripcion;
     public:
-        Especial();
+        //Especial();
         Especial(int, String, int, String);
-        int getAnioManifiesto;
+        int getAnioManifiesto();
         String getDescripcion();
 
 };

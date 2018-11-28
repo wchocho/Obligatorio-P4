@@ -8,7 +8,7 @@ class Hechizo{
     public:
         Hechizo();
         Hechizo(int, String);
-        hechizo(const Hechizo &);
+        Hechizo(const Hechizo &);
         int getNumero();
         String getNombre();
 

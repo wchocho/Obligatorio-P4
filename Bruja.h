@@ -6,14 +6,14 @@
 
 class Bruja{
     private:
-        int identificador;
+        String identificador;
         String nombre;
         HechizosBruja hechizos;
 
     public:
         Bruja();
-        Bruja(int, String, HechizosBruja);
-        int getIdentificador();
+        Bruja(String, String, HechizosBruja);
+        String getIdentificador();
         String gerNombre();
         HechizosBruja getHechizos();
 

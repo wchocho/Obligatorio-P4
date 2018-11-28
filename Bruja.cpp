@@ -4,11 +4,11 @@
 Bruja :: Bruja(): nombre(), hechizos(){
 
 }
-Bruja :: Bruja(int id, String nom, HechizosBruja hechizos_bruja): nombre(nom), hechizos(hechizos_bruja){
-    identificador = id;
+Bruja :: Bruja(String id, String nom, HechizosBruja hechizos_bruja): identificador(id), nombre(nom), hechizos(hechizos_bruja){
+
 }
 
-int Bruja :: getIdentificador(){
+String Bruja :: getIdentificador(){
     return identificador;
 }
 

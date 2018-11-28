@@ -10,7 +10,7 @@ class Comun: public Bruja{
 
     public:
         Comun();
-        Comun(int, String, HechizosBruja, String, bool);
+        Comun(String, String, HechizosBruja, String, bool);
         String getRegionOrigen();
         bool getVuelaEscoba();
         String getTipoBruja();

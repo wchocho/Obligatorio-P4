@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="Bruja.cpp" />
 		<Unit filename="Bruja.h" />
+		<Unit filename="Brujas.cpp" />
 		<Unit filename="Brujas.h" />
 		<Unit filename="Comun.cpp" />
 		<Unit filename="Comun.h" />

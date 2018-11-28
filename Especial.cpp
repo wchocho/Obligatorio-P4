@@ -1,14 +1,13 @@
 #include "Especial.h"
 
 Especial :: Especial (int anio, String desc, int num, String nom) : Hechizo(num,nom) ,descripcion(desc){
-anioManifiesto= anio;
-
+    anioManifiesto= anio;
 }
 
 int Especial :: getAnioManifiesto (){
-return anioManifiesto;
+    return anioManifiesto;
 }
 
 String Especial:: getDescripcion (){
-return descripcion;
+    return descripcion;
 }

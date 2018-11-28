@@ -1,7 +1,7 @@
 #include "Comun.h"
 #include "String.h"
 
-Comun :: Comun(int id, String nom, HechizosBruja hechizos , String region, bool volar): Bruja(id, nom, hechizos), regionOrigen(region){
+Comun :: Comun(String id, String nom, HechizosBruja hechizos , String region, bool volar): Bruja(id, nom, hechizos), regionOrigen(region){
     vuelaEscoba = volar;
 }
 

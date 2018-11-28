@@ -10,7 +10,7 @@ class Suprema: public Bruja{
 
     public:
         Suprema();
-        Suprema(int, String, HechizosBruja, Fecha, int);
+        Suprema(String, String, HechizosBruja, Fecha, int);
         Fecha getFechaNacimiento();
         int getCantPoderes();
         String getTipoBruja();

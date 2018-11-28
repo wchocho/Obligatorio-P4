@@ -1,6 +1,7 @@
 #ifndef COMUN_H_INCLUDED
 #define COMUN_H_INCLUDED
 #include "Bruja.h"
+#include "String.h"
 
 class Comun: public Bruja{
     private:

@@ -6,8 +6,9 @@ class Hechizo{
         int numero;
         String nombre;
     public:
-        //Hechizo();
+        Hechizo();
         Hechizo(int, String);
+        hechizo(const Hechizo &);
         int getNumero();
         String getNombre();
 

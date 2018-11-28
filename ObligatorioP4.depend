@@ -54,3 +54,73 @@
 	<stdlib.h>
 	<conio.h>
 
+1543360214 source:c:\users\admin.portable\documents\github\obligatorio-p4\bruja.cpp
+	"Bruja.h"
+
+1543360940 c:\users\admin.portable\documents\github\obligatorio-p4\bruja.h
+	"String.h"
+	"HechizosBruja.h"
+
+1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\string.h
+
+1543363173 c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.h
+	"Hechizo.h"
+
+1543363114 c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.h
+	"String.h"
+
+1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\especial.cpp
+
+1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\fecha.cpp
+	"Fecha.h"
+	<stdio.h>
+
+1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\fecha.h
+
+1543362528 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.cpp
+	"Hechizo.h"
+
+1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\main.cpp
+	<stdio.h>
+	"Menu.h"
+	"Utiles.h"
+
+1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\menu.h
+	"String.h"
+
+1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\utiles.h
+
+1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\menu.cpp
+	"Menu.h"
+	"Utiles.h"
+	"String.h"
+	<stdio.h>
+
+1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\string.cpp
+	"String.h"
+	<stdio.h>
+
+1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\utiles.cpp
+	"Utiles.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1543362446 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.cpp
+	"HechizosBruja.h"
+
+1543361290 source:c:\users\admin.portable\documents\github\obligatorio-p4\comun.cpp
+	"Comun.h"
+	"String.h"
+
+1543360581 c:\users\admin.portable\documents\github\obligatorio-p4\comun.h
+	"Bruja.h"
+	"String.h"
+
+1543361290 source:c:\users\admin.portable\documents\github\obligatorio-p4\suprema.cpp
+	"Suprema.h"
+
+1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\suprema.h
+	"Bruja.h"
+	"Fecha.h"
+

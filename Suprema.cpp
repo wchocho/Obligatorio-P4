@@ -1,6 +1,6 @@
 #include "Suprema.h"
 
-Suprema :: Suprema(int id, String nom, HechizosBruja hechizos , Fecha f_nacimiento, int cant_poderes): Bruja(id, nom, hechizos), Fecha(f_nacimiento){
+Suprema :: Suprema(int id, String nom, HechizosBruja hechizos , Fecha f_nacimiento, int cant_poderes): Bruja(id, nom, hechizos), fechaNacimiento(f_nacimiento){
     cantPoderes = cant_poderes;
 }
 

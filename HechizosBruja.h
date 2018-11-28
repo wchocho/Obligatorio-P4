@@ -6,7 +6,7 @@ int const CANT_HECHIZOS = 20;
 
 class HechizosBruja{
     private:
-        Hechizo arre [CANT_HECHIZOS];
+        Hechizo * arre[CANT_HECHIZOS];
         int tope;
     public:
         HechizosBruja();

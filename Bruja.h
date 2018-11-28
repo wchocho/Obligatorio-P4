@@ -17,7 +17,7 @@ class Bruja{
         String gerNombre();
         HechizosBruja getHechizos();
 
-        // aca me queda la duda si vas definidos asi.
+
         virtual String getTipoBruja() = 0;
         virtual int calcularPuntos() = 0;
 

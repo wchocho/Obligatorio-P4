@@ -1,5 +1,7 @@
 #include "Hechizo.h"
 
+
+
 Hechizo :: Hechizo(int num, String nom): nombre(nom){
     numero = num;
 }

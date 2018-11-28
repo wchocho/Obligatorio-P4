@@ -1,7 +1,8 @@
 #ifndef ESPECIAL_H_INCLUDED
 #define ESPECIAL_H_INCLUDED
+#include "Hechizo.h"
 
-public class Especial{
+class Especial : public Hechizo{
     private:
         int anioManifiesto;
         String descripcion;

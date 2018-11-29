@@ -21,4 +21,7 @@ Bruja * Fachada :: ObtenerBruja(String id){
     return bruja;
 }
 
+Iterador Fachada::listarBruja(){
+    return brujas.listarBruja();
+}
 

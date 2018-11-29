@@ -23,7 +23,7 @@ class Utiles
         //impresiones
         void imprimirMenu ();
 
-
+void listadoBrujas();
 
 
 };

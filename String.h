@@ -38,6 +38,7 @@ class String
         void strswp(String&);
         bool strmen(char * , char * );
         bool strcmp(char * , char * );
+        void dmCadenaPrint();
 
 
 };

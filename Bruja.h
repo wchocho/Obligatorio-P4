@@ -14,7 +14,7 @@ class Bruja{
         Bruja();
         Bruja(String, String, HechizosBruja);
         String getIdentificador();
-        String gerNombre();
+        String getNombre();
         HechizosBruja getHechizos();
 
 

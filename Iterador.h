@@ -2,11 +2,11 @@
 #define ITERADOR_H
 
 #include <stdio.h>
-#include "Brujas.h"
+#include "Bruja.h"
 
 
-class Iterador : public Brujas
-{
+
+class Iterador {
         private:
         struct Nodo{
             Bruja* info;

@@ -16,6 +16,7 @@ class Fachada
 
         bool ExisteBruja(String);
         Bruja * ObtenerBruja(String);
+        Iterador listarBruja();
 
 
 };

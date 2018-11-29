@@ -1,6 +1,8 @@
 #ifndef BRUJAS_H_INCLUDED
 #define BRUJAS_H_INCLUDED
 #include "Bruja.h"
+#include "Iterador.h"
+
 
 class Brujas{
 
@@ -9,6 +11,7 @@ class Brujas{
         bool member (String);
         void Insert (Bruja *);
         Bruja * Find (String);
+        Iterador listarBruja ();
     private:
         struct Nodo {
             Bruja * info;
@@ -17,6 +20,8 @@ class Brujas{
         };
         Nodo * abb;
         void InsertEnArbol (Bruja *, Nodo * &);
+        void listarBrujaRec (Nodo* , Iterador & );
+
         //Bruja * ObtenerDelArbol (Nodo *, String);
 };
 

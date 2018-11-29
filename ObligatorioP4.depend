@@ -54,73 +54,81 @@
 	<stdlib.h>
 	<conio.h>
 
-1543360214 source:c:\users\admin.portable\documents\github\obligatorio-p4\bruja.cpp
+1543517960 source:c:\users\admin.portable\documents\github\obligatorio-p4\bruja.cpp
 	"Bruja.h"
 
-1543360940 c:\users\admin.portable\documents\github\obligatorio-p4\bruja.h
+1543517961 c:\users\admin.portable\documents\github\obligatorio-p4\bruja.h
 	"String.h"
 	"HechizosBruja.h"
 
-1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\string.h
+1543518361 c:\users\admin.portable\documents\github\obligatorio-p4\string.h
+	<iostream>
+	<stdio.h>
 
-1543363173 c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.h
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.h
 	"Hechizo.h"
 
-1543363114 c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.h
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.h
 	"String.h"
 
-1543075104 source:c:\users\admin.portable\documents\github\obligatorio-p4\especial.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\especial.cpp
+	"Especial.h"
 
-1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\fecha.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\fecha.cpp
 	"Fecha.h"
-	<stdio.h>
 
-1543075104 c:\users\admin.portable\documents\github\obligatorio-p4\fecha.h
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\fecha.h
+	<iostream>
 
-1543362528 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizo.cpp
 	"Hechizo.h"
 
-1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\main.cpp
+1543515460 source:c:\users\admin.portable\documents\github\obligatorio-p4\main.cpp
 	<stdio.h>
-	"Menu.h"
+	<conio.h>
 	"Utiles.h"
 
-1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\menu.h
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\menu.h
 	"String.h"
 
-1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\utiles.h
+1543516570 c:\users\admin.portable\documents\github\obligatorio-p4\utiles.h
+	<cstdlib>
+	"Fachada.h"
+	"Fecha.h"
+	"Bruja.h"
+	"Suprema.h"
+	"Comun.h"
 
-1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\menu.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\menu.cpp
 	"Menu.h"
 	"Utiles.h"
 	"String.h"
 	<stdio.h>
 
-1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\string.cpp
+1543518684 source:c:\users\admin.portable\documents\github\obligatorio-p4\string.cpp
 	"String.h"
-	<stdio.h>
 
-1543360215 source:c:\users\admin.portable\documents\github\obligatorio-p4\utiles.cpp
+1543518054 source:c:\users\admin.portable\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 
-1543362446 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\hechizosbruja.cpp
 	"HechizosBruja.h"
 
-1543361290 source:c:\users\admin.portable\documents\github\obligatorio-p4\comun.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\comun.cpp
 	"Comun.h"
 	"String.h"
 
-1543360581 c:\users\admin.portable\documents\github\obligatorio-p4\comun.h
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\comun.h
 	"Bruja.h"
 	"String.h"
 
-1543361290 source:c:\users\admin.portable\documents\github\obligatorio-p4\suprema.cpp
+1543515459 source:c:\users\admin.portable\documents\github\obligatorio-p4\suprema.cpp
 	"Suprema.h"
 
-1543360215 c:\users\admin.portable\documents\github\obligatorio-p4\suprema.h
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\suprema.h
 	"Bruja.h"
 	"Fecha.h"
 
@@ -222,4 +230,30 @@
 	"Brujas.h"
 	"Suprema.h"
 	"Comun.h"
+
+1543518701 source:c:\users\admin.portable\documents\github\obligatorio-p4\brujas.cpp
+	"Brujas.h"
+	<stdio.h>
+
+1543517588 c:\users\admin.portable\documents\github\obligatorio-p4\brujas.h
+	"Bruja.h"
+	"Iterador.h"
+
+1543515459 c:\users\admin.portable\documents\github\obligatorio-p4\especial.h
+	"Hechizo.h"
+
+1543516350 source:c:\users\admin.portable\documents\github\obligatorio-p4\fachada.cpp
+	"Fachada.h"
+
+1543517212 c:\users\admin.portable\documents\github\obligatorio-p4\fachada.h
+	"Brujas.h"
+	"Suprema.h"
+	"Comun.h"
+
+1543515256 source:c:\users\admin.portable\documents\github\obligatorio-p4\iterador.cpp
+	"Iterador.h"
+
+1543517706 c:\users\admin.portable\documents\github\obligatorio-p4\iterador.h
+	<stdio.h>
+	"Bruja.h"
 

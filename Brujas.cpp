@@ -41,10 +41,23 @@ void Brujas :: InsertEnArbol (Bruja* bruja, Nodo* &abb){
     }
 }
 
+Iterador Brujas::listarBruja (){
+    Iterador iterador;
+    listarBrujaRec(abb, iterador);
+    return iterador;
+}
+
+void Brujas::listarBrujaRec (Nodo* abbAux, Iterador& iterador){
+    if (abbAux != NULL){
+        listarBrujaRec (abbAux->hizq, iterador);
+        iterador.insertarBruja(abbAux->info);
+        listarBrujaRec (abbAux->hder, iterador);
+    }
+}
 
 Bruja * Brujas :: Find (String id){
     Nodo* abbAux = abb;
-    while(abbAux->info->getIdentificador() != id){
+    while(!(abbAux->info->getIdentificador() == id)){
         if(abbAux->info->getIdentificador() < id){
             abbAux = abbAux->hizq;
         }else{

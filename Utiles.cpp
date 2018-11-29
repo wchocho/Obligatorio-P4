@@ -128,3 +128,22 @@ bool Utiles::preguntoReintentar (string msg){
 
     return reintentar == 's';
 }
+
+
+void Utiles::listadoBrujas (){
+    Iterador iterador = fachada.listarBruja();
+
+    if (iterador.hayMasBrujas()){
+        system("CLS");
+        cout << "LISTADO DE BRUJAS" << endl << endl;
+        while (iterador.hayMasBrujas()){
+            Bruja* bruja = (Bruja*)iterador.proximaBruja();
+            bruja->getNombre().print(); cout << " - ";
+//            cout << bruja->getIdentificador().print() << " - ";
+  //          cout << bruja->getNombre() << " - ";
+
+        }
+    }else{
+        cout << "ERROR: no hay brujas ingresadas en el sistema";
+    }
+}

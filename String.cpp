@@ -1,8 +1,4 @@
 #include "String.h"
-#include <iostream>
-#include <string.h>
-#include <stdio.h>
-
 
 String::String()
 {
@@ -108,6 +104,7 @@ bool String::operator==(String s){
     return sonIguales;
 }
 
+
 void String::operator=(const String &s){
     _strcop(cadena, s.cadena);
 }
@@ -180,47 +177,32 @@ void String::strswp(String &s){
     delete [] aux;
 }
 
-bool String :: strmen(char * s1, char * s2){
-    int i = 0;
-    bool esMenor = true;
-    while(s1[i]!='\0' && s2[i]!='\0' && esMenor){
-        if(s1[i] > s2[i]){
-            esMenor = false;
-        }
+/*
+void intTOstring(int num, String &s){
+    char aux[MAX];
+    int i = 0, numAux;
+    do{
+        numAux = num % 10;
+        aux[i] = (char) (48 + numAux);
         i++;
-    }
-    return esMenor;
+        num /= 10;
+    }while(num != 0);
+    aux[i] = '\0';
+    strcop(s, aux);
 }
-
-bool String :: strcmp(char * s1, char * s2 ){
-    int i = 0;
-    bool sonIguales = true;
-    while(s1[i]!='\0' && s2[i]!='\0' && sonIguales){
-        if(s1[i] != s2[i]){
-            sonIguales = false;
-        }
-        i++;
+*/
+/*
+void String::strinv(String &s1, String s2){
+    int largo = strlar(s2);
+    int i;
+    s1 = new char[largo + 1];
+    for(i=0; i<largo; i++){
+        s1[i] = s2[largo-i-1];;
     }
-    if(s1[i] != s2[i]){
-        sonIguales = false;
-    }
-    return sonIguales;
-
+    s1[i] = '\0';
 }
+*/
 
-bool String::operator!=(String s){
-    int i = 0;
-    bool sonIguales = true;
-    while(cadena[i]!='\0' && s.cadena[i]!='\0' && sonIguales){
-        if(cadena[i] != s.cadena[i]){
-            sonIguales = false;
-        }
-        i++;
-    }
-    if(cadena[i] != s.cadena[i]){
-        sonIguales = false;
-    }
-    return sonIguales;
+void String::dmCadenaPrint(){
+    cout << "dm cadena: " << &cadena;
 }
-
-

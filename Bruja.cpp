@@ -12,7 +12,7 @@ String Bruja :: getIdentificador(){
     return identificador;
 }
 
-String Bruja :: gerNombre(){
+String Bruja :: getNombre(){
     return nombre;
 }
 

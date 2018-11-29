@@ -10,6 +10,7 @@ void Utiles::imprimirMenu(){
     system("CLS");
     cout << " 1 - Registrar nueva bruja" << endl;
     cout << "10 - Salir" << endl << endl;
+    cout << " 3 - Listar Brujas ";
 
 }
 

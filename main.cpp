@@ -18,6 +18,7 @@ int main(){
                 break;
 
             case 3 :{
+                utiles.listadoBrujas();
                 break;
             }
 

@@ -74,30 +74,32 @@ void Utiles::registrarNuevaBruja(){
                     region_origen.scan();
 
 
-                    /*
 
-                    NO ESTA LEYENDO EL CHAR DE FORMA CORRECTA - REVISAR
+
+                    //NO ESTA LEYENDO EL CHAR DE FORMA CORRECTA - REVISAR
 
                     do{
                         cout << " Vuela en escoba? (s, n)";
-                        cin >> vuela_escoba_aux
+                        cin >> vuela_escoba_aux;
                     }while (vuela_escoba_aux != 's' && vuela_escoba_aux != 'n');
-                    if(vuela_escoba_aux == 's' && vuela_escoba_aux == 'S' ){
+                    if(vuela_escoba_aux == 's' || vuela_escoba_aux == 'S' ){
                         vuela_escoba = true;
                     }
-                    cout  << vuela_escoba;
-                    */
+
+
 
                     cout << "Ingrese el identificador de la bruja suprema para su asignacion." << endl;
                     id_suprema.scan();
 
 
                     if( fachada.ExisteBruja(id_suprema)){
-                        Bruja * bruja_aux = NULL;
-                        bruja_aux = fachada.ObtenerBruja(id_suprema);
-                        if(bruja_aux->getTipoBruja()== 0){
-                            bruja = new Comun(identificador, nombre, hechizos, region_origen, vuela_escoba);
+                        Bruja * suprema_aux = NULL;
+                        suprema_aux = fachada.ObtenerBruja(id_suprema);
+                        if(suprema_aux->getTipoBruja()== 0){
+
+                            bruja = new Comun(identificador, nombre, hechizos, region_origen, vuela_escoba, (Suprema*)suprema_aux);
                             fachada.RegistrarBruja(bruja, error);
+
                             if (!error){
                                 cout << "Bruja comun registrada" << endl;
                             }
@@ -169,9 +171,11 @@ void Utiles :: listadoDetallePorBruja(){
         if(bruja_aux->getTipoBruja() == 0){
             imprimirDatosSuprema((Suprema*)bruja_aux);
         }else{
-            //imprimirDatosComun((Comun*)bruja_aux);
-            //bruja_suprema = fachada.ObtenerBruja((Comun*)bruja_aux->);
-            imprimirDatosSuprema((Suprema*)bruja_aux);
+            Bruja * bruja_suprema = NULL;
+            imprimirDatosComun((Comun*)bruja_aux);
+            Comun *c = (Comun*)bruja_aux;
+            bruja_suprema = fachada.ObtenerBruja( c->getSuprema()->getIdentificador() );
+            imprimirDatosSuprema((Suprema*)bruja_suprema);
         }
     }
 }
@@ -200,7 +204,7 @@ void Utiles :: imprimirDatosComun(Comun* bruja_comun){
     cout << " - Region de origen: "; bruja_comun->getRegionOrigen().print(); cout ;
     String resu;
     resu = boolAString(bruja_comun->getVuelaEscoba());
-    cout << " - Region de origen: "; resu.print();
+    cout << " - Vuela en escoba: "; resu.print(); cout;
 }
 
 String Utiles :: boolAString(bool aux){
@@ -208,7 +212,7 @@ String Utiles :: boolAString(bool aux){
     if(aux){
         resu = ("SI");
     }else{
-        resu = ("SI");
+        resu = ("NO");
     }
     return resu;
 }

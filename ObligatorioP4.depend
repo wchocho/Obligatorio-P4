@@ -132,12 +132,13 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543447676 source:c:\users\rperera\documents\github\obligatorio-p4\comun.cpp
+1543533122 source:c:\users\rperera\documents\github\obligatorio-p4\comun.cpp
 	"Comun.h"
 	"String.h"
 
-1543447667 c:\users\rperera\documents\github\obligatorio-p4\comun.h
+1543533090 c:\users\rperera\documents\github\obligatorio-p4\comun.h
 	"Bruja.h"
+	"Suprema.h"
 	"String.h"
 
 1543523661 c:\users\rperera\documents\github\obligatorio-p4\bruja.h
@@ -198,7 +199,7 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543531444 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
+1543533845 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>

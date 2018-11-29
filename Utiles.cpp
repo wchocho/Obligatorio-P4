@@ -154,7 +154,26 @@ void Utiles::listadoBrujas (){
 }
 
 void Utiles :: listadoDetallePorBruja(){
-
+    bool existe=false;
+    String identificador;
+    system("CLS");
+    cout << "DETALLE POR BRUJA" << endl << endl;
+    cout << "Ingrese el indentificador de la bruja que desea ver en detalle: ";
+    identificador.scan();
+    existe = fachada.ExisteBruja(identificador);
+    if(!existe){
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
+    }else{
+        Bruja * bruja_aux = NULL;
+        bruja_aux = fachada.ObtenerBruja(identificador);
+        if(bruja_aux->getTipoBruja() == 0){
+            imprimirDatosSuprema((Suprema*)bruja_aux);
+        }else{
+            //imprimirDatosComun((Comun*)bruja_aux);
+            //bruja_suprema = fachada.ObtenerBruja((Comun*)bruja_aux->);
+            imprimirDatosSuprema((Suprema*)bruja_aux);
+        }
+    }
 }
 
 void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja){
@@ -166,7 +185,30 @@ void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja){
     }else{
         tipo = ("Comun");
     }
-    cout << " - Tipo de bruja: ";  tipo.print(); cout << endl;
+    cout << " - Tipo de bruja: ";  tipo.print();
+}
 
+void Utiles :: imprimirDatosSuprema(Suprema* bruja_suprema){
+    imprimirDatosBasicosBruja( (Bruja*)bruja_suprema);
+    cout << " - Fecha de nacimiento: "; bruja_suprema->getFechaNacimiento().imprimir(); cout ;
+    // impresion de numeros
+    cout << " - Cantidad de poderes: " << bruja_suprema->getCantPoderes() ;
 
+}
+void Utiles :: imprimirDatosComun(Comun* bruja_comun){
+    imprimirDatosBasicosBruja( (Bruja*)bruja_comun);
+    cout << " - Region de origen: "; bruja_comun->getRegionOrigen().print(); cout ;
+    String resu;
+    resu = boolAString(bruja_comun->getVuelaEscoba());
+    cout << " - Region de origen: "; resu.print();
+}
+
+String Utiles :: boolAString(bool aux){
+    String resu;
+    if(aux){
+        resu = ("SI");
+    }else{
+        resu = ("SI");
+    }
+    return resu;
 }

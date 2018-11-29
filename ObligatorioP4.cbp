@@ -48,6 +48,8 @@
 		<Unit filename="Hechizo.h" />
 		<Unit filename="HechizosBruja.cpp" />
 		<Unit filename="HechizosBruja.h" />
+		<Unit filename="Iterador.cpp" />
+		<Unit filename="Iterador.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
 		<Unit filename="String.cpp" />

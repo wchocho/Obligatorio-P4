@@ -17,9 +17,7 @@ class Utiles
 
         //menu
         void registrarNuevaBruja ();
-        // auxiliares
-        bool preguntoReintentar (string);
-        void imprimirDatosBasicosBruja(Bruja *);
+
 
         //impresiones
         void imprimirMenu ();
@@ -29,6 +27,14 @@ class Utiles
         void listadoDetallePorBruja();
         //void listadoDetalleBrujaMasAntigua();
         //void listadoDetalleBrujaHechizos();
+
+
+        // auxiliares
+        bool preguntoReintentar (string);
+        void imprimirDatosBasicosBruja(Bruja *);
+        void imprimirDatosSuprema(Suprema *);
+        void imprimirDatosComun(Comun *);
+        String boolAString(bool);
 
 
 };

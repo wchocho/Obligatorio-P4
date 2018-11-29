@@ -17,8 +17,6 @@ class Fachada
         bool ExisteBruja(String);
         Bruja * ObtenerBruja(String);
         Iterador listarBruja();
-
-
 };
 
 #endif // FACHADA_H_INCLUDED

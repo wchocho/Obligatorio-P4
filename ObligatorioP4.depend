@@ -174,7 +174,7 @@
 1543265562 c:\users\rperera\documents\github\obligatorio-p4\menu.h
 	"String.h"
 
-1543525994 c:\users\rperera\documents\github\obligatorio-p4\utiles.h
+1543530913 c:\users\rperera\documents\github\obligatorio-p4\utiles.h
 	<cstdlib>
 	"Fachada.h"
 	"Fecha.h"
@@ -198,7 +198,7 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543526001 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
+1543531444 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>
@@ -221,10 +221,10 @@
 1543368633 c:\users\rperera\documents\github\obligatorio-p4\especial.h
 	"Hechizo.h"
 
-1543523661 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
+1543528861 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
 	"Fachada.h"
 
-1543523661 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
+1543528591 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
 	"Brujas.h"
 	"Suprema.h"
 	"Comun.h"

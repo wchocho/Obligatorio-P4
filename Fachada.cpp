@@ -6,8 +6,6 @@ Fachada::Fachada(){
 
 void Fachada :: RegistrarBruja(Bruja* bruja, int &error){
     error = 0;
-    //String tipo;
-    //tipo = bruja->getTipoBruja();
     brujas.Insert(bruja);
 }
 
@@ -24,4 +22,6 @@ Bruja * Fachada :: ObtenerBruja(String id){
 Iterador Fachada::listarBruja(){
     return brujas.listarBruja();
 }
+
+
 

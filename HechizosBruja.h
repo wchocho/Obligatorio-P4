@@ -10,9 +10,10 @@ class HechizosBruja{
         int tope;
     public:
         HechizosBruja();
+        bool esvacia();
         bool estaLlena();
-        void insBack (Hechizo);
-        bool existeHechizo(Hechizo);
+        void insBack (Hechizo*);
+        bool existeHechizo(Hechizo*);
 
  };
 

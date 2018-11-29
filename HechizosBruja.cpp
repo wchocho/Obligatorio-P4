@@ -4,3 +4,26 @@ HechizosBruja :: HechizosBruja(){
 
     tope = 0;
 }
+bool HechizosBruja:: esvacia(){
+return (tope == 0);
+}
+bool HechizosBruja :: estaLlena (){
+return (bool) (tope== CANT_HECHIZOS);
+}
+
+void HechizosBruja:: insBack (Hechizo*he){
+arre[tope]=he;
+tope++;
+}
+
+bool HechizosBruja :: existeHechizo(Hechizo*he){
+int i=0;
+bool existe=false;
+while(!existe && i<tope){
+    if(arre[i]==he)
+        existe=true;
+    else
+        i++;
+}
+    return existe;
+}

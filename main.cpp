@@ -11,40 +11,44 @@ int main(){
         cin >> op;
         switch(op){
             case 1:
-                utiles.registrarNuevaBrujaSuprema();
+                utiles.registrarNuevaBruja();
                 break;
 
-            case 2:
+            case 2 :{
+                //utiles.registrarHechizo();
+                break;
+            }
+
+            case 3:{
+                //utiles.cantidadHechizosPorBruja();
                 break;
 
-            case 3 :{
+            }
+            case 4:{
                 utiles.listadoBrujas();
                 break;
-            }
 
-            case 4:{
-                break;
             }
             case 5:{
+                utiles.listadoDetallePorBruja();
                 break;
             }
             case 6:{
+                //utiles.listadoDetalleBrujaMasAntigua();
                 break;
             }
             case 7:{
-                break;
-            }
-            case 8:{
+                //utiles.listadoDetalleBrujaHechizos();
                 break;
             }
 
         }
-        if (op != 8){
+        if (op != 7){
             cin.ignore();
             getch();
 
         }
-    }while(op != 8);
+    }while(op != 7);
      return 0;
 }
 

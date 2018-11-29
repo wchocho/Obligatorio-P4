@@ -16,14 +16,19 @@ class Utiles
         Utiles();
 
         //menu
-        void registrarNuevaBrujaSuprema ();
-
+        void registrarNuevaBruja ();
+        // auxiliares
         bool preguntoReintentar (string);
+        void imprimirDatosBasicosBruja(Bruja *);
 
         //impresiones
         void imprimirMenu ();
-
-void listadoBrujas();
+        void listadoBrujas();
+        //void registrarHechizo();
+        //void cantidadHechizosPorBruja();
+        void listadoDetallePorBruja();
+        //void listadoDetalleBrujaMasAntigua();
+        //void listadoDetalleBrujaHechizos();
 
 
 };

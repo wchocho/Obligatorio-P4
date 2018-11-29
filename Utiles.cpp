@@ -9,12 +9,18 @@ Utiles::Utiles():fachada(){
 void Utiles::imprimirMenu(){
     system("CLS");
     cout << " 1 - Registrar nueva bruja" << endl;
-    cout << "10 - Salir" << endl << endl;
-    cout << " 3 - Listar Brujas ";
+    cout << " 2 - Regsitrar hechizo" << endl;
+    cout << " 3 - Cantidad de hechizos por bruja" << endl;
+    cout << " 4 - Listado de brujas alfabetico" << endl;
+    cout << " 5 - Listado de detalle por bruja" << endl;
+    cout << " 6 - Listado de detalle por bruja mas antigua" << endl;
+    cout << " 7 - Listado de detalle por bruja y hechizo" << endl;
+    cout << "8 - Salir" << endl << endl;
+
 
 }
 
-void Utiles::registrarNuevaBrujaSuprema(){
+void Utiles::registrarNuevaBruja(){
     bool existe = false;
     Bruja * bruja = NULL;
     String identificador;
@@ -139,12 +145,28 @@ void Utiles::listadoBrujas (){
         cout << "LISTADO DE BRUJAS" << endl << endl;
         while (iterador.hayMasBrujas()){
             Bruja* bruja = (Bruja*)iterador.proximaBruja();
-            bruja->getNombre().print(); cout << " - ";
-//            cout << bruja->getIdentificador().print() << " - ";
-  //          cout << bruja->getNombre() << " - ";
-
+            imprimirDatosBasicosBruja(bruja);
+            //bruja->getNombre().print(); cout << " - ";
         }
     }else{
         cout << "ERROR: no hay brujas ingresadas en el sistema";
     }
+}
+
+void Utiles :: listadoDetallePorBruja(){
+
+}
+
+void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja){
+    cout << "Identificador: "; bruja->getIdentificador().print(); cout ;
+    cout << " - Nombre: "; bruja->getNombre().print(); cout ;
+    String tipo;
+    if(bruja->getTipoBruja() == 0){
+        tipo = ("Suprema");
+    }else{
+        tipo = ("Comun");
+    }
+    cout << " - Tipo de bruja: ";  tipo.print(); cout << endl;
+
+
 }

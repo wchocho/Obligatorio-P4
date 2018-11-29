@@ -26,6 +26,7 @@ void Utiles::registrarNuevaBrujaSuprema(){
     cout << "Ingrese su identificador: ";
     identificador.scan();
     existe = fachada.ExisteBruja(identificador);
+
     if (existe){
         cout << "Error: ya existe una bruja registrada con el identificador";
     }else{
@@ -58,19 +59,28 @@ void Utiles::registrarNuevaBrujaSuprema(){
 
                 case 1:{ //comun
                     String region_origen;
-                    bool vuela_escoba = true;
-                    String vuela_escoba_aux;
+                    bool vuela_escoba = false;
+                    char vuela_escoba_aux;
                     String id_suprema;
+
                     cout << "Ingrese la region de origen" << endl;
                     region_origen.scan();
 
 
-                    cout << "¿Vuela en escoba? (s, n)";
-                    //vuela_escoba_aux.scan();
-                    //if(vuela_escoba_aux[0] != 's' or vuela_escoba_aux[0] != 'S' ){
-                    //    vuela_escoba = false;
-                    // }
-                    printf("%d", vuela_escoba);
+                    /*
+
+                    NO ESTA LEYENDO EL CHAR DE FORMA CORRECTA - REVISAR
+
+                    do{
+                        cout << " Vuela en escoba? (s, n)";
+                        cin >> vuela_escoba_aux
+                    }while (vuela_escoba_aux != 's' && vuela_escoba_aux != 'n');
+                    if(vuela_escoba_aux == 's' && vuela_escoba_aux == 'S' ){
+                        vuela_escoba = true;
+                    }
+                    cout  << vuela_escoba;
+                    */
+
                     cout << "Ingrese el identificador de la bruja suprema para su asignacion." << endl;
                     id_suprema.scan();
 

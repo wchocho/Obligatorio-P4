@@ -13,7 +13,7 @@ class Suprema: public Bruja{
         Suprema(String, String, HechizosBruja, Fecha, int);
         Fecha getFechaNacimiento();
         int getCantPoderes();
-        String getTipoBruja();
+        int getTipoBruja();
         int calcularPuntos();
 
 };

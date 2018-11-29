@@ -10,9 +10,8 @@ Fecha Suprema :: getFechaNacimiento(){
 int Suprema :: getCantPoderes(){
     return cantPoderes;
 }
-String Suprema :: getTipoBruja(){
-    String resu ("Suprema");
-    return resu;
+int Suprema :: getTipoBruja(){
+    return 0;
 }
 int Suprema :: calcularPuntos(){
     // èndiente de implementae

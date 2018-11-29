@@ -1,36 +1,39 @@
 #ifndef FECHA_H_INCLUDED
 #define FECHA_H_INCLUDED
+#include <iostream>
+using namespace std;
 
-class Fecha{
+class Fecha
+{
     private:
         int dia;
         int mes;
         int anio;
+
+        void sumo1(Fecha&);
+        void resto1();
+
     public:
         Fecha();
         Fecha(int, int, int);
-        Fecha(const Fecha &);
-        int getDia();
-        int getMes();
-        int getAnio();
-        void setDia(int);
-        void setMes(int);
-        void setAnio(int);
-        bool operator<(Fecha);
-        bool operator==(Fecha);
-        //(devuelve la fecha correspondiente al día siguiente a la fecha dada)
-        //prefijo
-        Fecha operator++();
-        //postfijo
-        Fecha operator++(int);
-        Fecha operator+(int);
-        // (devuelve la cantidad de días de diferencia entre 2 fechas)
-        int operator-(Fecha);
-        bool esValida();
-        int cantidadDiasMes(int, int);
+        Fecha(const Fecha&);
+        int Getdia();
+        void Setdia(int);
+        int Getmes();
+        void Setmes(int);
+        int Getanio();
+        void Setanio(int);
 
+        bool operator< (Fecha);
+        bool operator== (Fecha);
+        Fecha operator++ ();
+        Fecha operator++ (int);
+        Fecha operator+ (int);
+        int operator- (Fecha);
+        bool esValida ();
+        void imprimir();
+        void scan();
 
 };
-
 
 #endif // FECHA_H_INCLUDED

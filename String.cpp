@@ -2,89 +2,182 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-using namespace std;
-String :: String(){
+
+
+String::String()
+{
     cadena = new char[1];
     cadena[0] = '\0';
 }
 
-String :: String(char* s){
-    int largo = strlen(s);
-    cadena = new char[largo+1];
-    strcpy(s, cadena);
-}
-String :: String(const String &otro){
-    int largo = strlen(otro.cadena);
-    cadena = new char[largo+1];
-    strcpy(otro.cadena, cadena);
-}
-String :: ~String(){
-    delete [] cadena;
+String::String(const String &s){
+    cadena = new char[1];
+    cadena[0] = '\0';
+    _strcop(cadena, s.cadena);
 }
 
-String String :: operator=(const String &otro){
-    if (this != &otro){
-        delete [] cadena;
-    int largo = strlen(otro.cadena);
-    cadena = new char[largo+1];
-    strcpy(otro.cadena, cadena);
-    }
-    return (*this);
+String::String(string s){
+    cadena = new char[1];
+    cadena[0] = '\0';
+    _strcop(cadena, s);
 }
 
-bool String :: operator==(String s){
-    return strcmp(this->cadena, s.cadena);
+String::~String()
+{
+    delete []cadena;
 }
 
-bool String :: operator<(String s){
-    return strmen(this->cadena, s.cadena);
-}
-
-String String :: operator+ (char * otro){
-    String aux;
-    int largo1 = strlen(cadena);
-    int largo2 = strlen(otro);
-    aux.cadena = new char [largo1 + largo2 + 1];
-    strcpy(cadena, aux.cadena);
-    //strcat(aux.cadena,otro.cadena);
-    return aux;
-}
-void String :: scan(){
+void String::scan(){
     char aux[MAX];
-    char c = cin.get();
-    int i=0;
-    while (c!='\n' && i<MAX-1){
-        aux[i] = c;
+    int i = 0;
+    fflush(stdin);
+    scanf("%c", &aux[0]);
+    while(i<MAX && aux[i]!='\n'){
         i++;
-        c = cin.get();
+        scanf("%c", &aux[i]);
     }
     aux[i]='\0';
-    cadena = new char[i+1];
-    strcpy(aux, cadena);
+
+    _strcop(cadena, aux);
 }
-void String :: print(){
+
+void String::print(){
     int i = 0;
-    while(i<MAX && this->cadena[i]!='\0'){
-        printf("%c", this->cadena[i]);
+    while(cadena[i]!='\0'){
+        printf("%c", cadena[i]);
         i++;
     }
 }
 
-int String :: strlen(char* s){
+void String::print(char* s){
     int i = 0;
-    while(i<MAX && s[i]!='\0'){
+    while(s[i]!='\0'){
+        printf("%c", s[i]);
         i++;
     }
-    return i - 1;
 }
 
-void String :: strcpy(char* s1, char * &s2){
+char* String::getCadena(){
+    return cadena;
+}
+
+int String::strlar(){
+    return _strlar(cadena);
+}
+
+int String::_strlar(char *s){
     int i = 0;
-    while(s1[i]!='\0'){
-        s2[i] = s1[i];
+    while(s[i]!='\0'){
         i++;
     }
-    s2[i] = '\0';
+    return i;
+}
+
+int String::_strlar(string s){
+    int i = 0;
+    while(s[i]!='\0'){
+        i++;
+    }
+    return i;
+}
+
+bool String::operator<(String s){
+    int i = 0;
+    bool esMenor = true;
+    while(cadena[i]!='\0' && s.cadena[i]!='\0' && esMenor){
+        if(cadena[i] > s.cadena[i]){
+            esMenor = false;
+        }
+        i++;
+    }
+    return esMenor;
+}
+
+bool String::operator==(String s){
+    int i = 0;
+    bool sonIguales = true;
+    while(cadena[i]!='\0' && s.cadena[i]!='\0' && sonIguales){
+        if(cadena[i] != s.cadena[i]){
+            sonIguales = false;
+        }
+        i++;
+    }
+    if(cadena[i] != s.cadena[i]){
+        sonIguales = false;
+    }
+    return sonIguales;
+}
+
+void String::operator=(const String &s){
+    _strcop(cadena, s.cadena);
+}
+
+void String::operator= (char* s){
+    _strcop(cadena, s);
+}
+
+/*
+void String::operator= (const string &s){
+    delete [] cadena;
+    int largo = _strlar(s) + 1;
+    cadena = new char [largo];
+    int i = 0;
+    while(i<largo){
+        cadena[i] = s[i];
+        i++;
+    }
+}
+*/
+void String::_strcop (char* &s1, char* s2){
+    delete s1;
+    int largo = _strlar(s2) + 1;
+    s1 = new char [largo];
+    int i = 0;
+    while(i<largo){
+        s1[i] = s2[i];
+        i++;
+    }
+}
+
+void String::_strcop (char *s1, string s2){
+    delete [] s1;
+    int largo = _strlar(s2) + 1;
+    s1 = new char [largo];
+    int i = 0;
+    while(i<largo){
+        s1[i] = s2[i];
+        i++;
+    }
+}
+
+String String::operator+ (String &s){
+    String stringAux;
+    int largoS1 = strlar();
+    int largoS2 = s.strlar();
+    int largo = largoS1 + largoS2 + 1;
+    int i = 0;
+
+    stringAux.cadena = new char[largo];
+
+    for(int j = 0; j<largoS1; j++){
+        stringAux.cadena[i] = cadena[j];
+        i++;
+    }
+    for(int j = 0; j<largoS2; j++){
+        stringAux.cadena[i] = s.cadena[j];
+        i++;
+    }
+    stringAux.cadena[i] = '\0';
+
+    return stringAux;
+}
+
+void String::strswp(String &s){
+    char *aux;
+    _strcop(aux, cadena);
+    _strcop(cadena, s.cadena);
+    _strcop(s.cadena, aux);
+    delete [] aux;
 }
 
 bool String :: strmen(char * s1, char * s2){
@@ -114,3 +207,20 @@ bool String :: strcmp(char * s1, char * s2 ){
     return sonIguales;
 
 }
+
+bool String::operator!=(String s){
+    int i = 0;
+    bool sonIguales = true;
+    while(cadena[i]!='\0' && s.cadena[i]!='\0' && sonIguales){
+        if(cadena[i] != s.cadena[i]){
+            sonIguales = false;
+        }
+        i++;
+    }
+    if(cadena[i] != s.cadena[i]){
+        sonIguales = false;
+    }
+    return sonIguales;
+}
+
+

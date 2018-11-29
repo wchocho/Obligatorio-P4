@@ -13,9 +13,8 @@ bool Comun :: getVuelaEscoba(){
     return vuelaEscoba;
 }
 
-String Comun :: getTipoBruja(){
-    String resu("Comun");
-    return resu;
+int Comun :: getTipoBruja(){
+    return 1;
 }
 
 int Comun :: calcularPuntos(){

@@ -7,13 +7,13 @@ class Comun: public Bruja{
     private:
         String regionOrigen;
         bool vuelaEscoba;
-
+        Bruja *suprema;
     public:
         Comun();
         Comun(String, String, HechizosBruja, String, bool);
         String getRegionOrigen();
         bool getVuelaEscoba();
-        String getTipoBruja();
+        int getTipoBruja();
         int calcularPuntos();
 
 };

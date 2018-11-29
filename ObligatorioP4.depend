@@ -124,19 +124,21 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543370393 source:c:\users\rperera\documents\github\obligatorio-p4\comun.cpp
+1543447676 source:c:\users\rperera\documents\github\obligatorio-p4\comun.cpp
 	"Comun.h"
 	"String.h"
 
-1543370454 c:\users\rperera\documents\github\obligatorio-p4\comun.h
+1543447667 c:\users\rperera\documents\github\obligatorio-p4\comun.h
 	"Bruja.h"
 	"String.h"
 
-1543369179 c:\users\rperera\documents\github\obligatorio-p4\bruja.h
+1543447686 c:\users\rperera\documents\github\obligatorio-p4\bruja.h
 	"String.h"
 	"HechizosBruja.h"
 
-1543376703 c:\users\rperera\documents\github\obligatorio-p4\string.h
+1543439584 c:\users\rperera\documents\github\obligatorio-p4\string.h
+	<iostream>
+	<stdio.h>
 
 1543368633 c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.h
 	"Hechizo.h"
@@ -144,11 +146,11 @@
 1543369650 c:\users\rperera\documents\github\obligatorio-p4\hechizo.h
 	"String.h"
 
-1543357894 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
+1543444345 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
 	"Fecha.h"
-	<stdio.h>
 
-1543068330 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
+1543444338 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
+	<iostream>
 
 1543368633 source:c:\users\rperera\documents\github\obligatorio-p4\hechizo.cpp
 	"Hechizo.h"
@@ -156,36 +158,42 @@
 1543368633 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
 	"HechizosBruja.h"
 
-1543269051 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
+1543443477 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
 	<stdio.h>
-	"Menu.h"
+	<conio.h>
 	"Utiles.h"
 
 1543265562 c:\users\rperera\documents\github\obligatorio-p4\menu.h
 	"String.h"
 
-1543265652 c:\users\rperera\documents\github\obligatorio-p4\utiles.h
+1543445068 c:\users\rperera\documents\github\obligatorio-p4\utiles.h
+	<cstdlib>
+	"Fachada.h"
+	"Fecha.h"
+	"Bruja.h"
+	"Suprema.h"
+	"Comun.h"
 
-1543356718 source:c:\users\rperera\documents\github\obligatorio-p4\menu.cpp
+1543441831 source:c:\users\rperera\documents\github\obligatorio-p4\menu.cpp
 	"Menu.h"
 	"Utiles.h"
 	"String.h"
 	<stdio.h>
 
-1543376849 source:c:\users\rperera\documents\github\obligatorio-p4\string.cpp
+1543439561 source:c:\users\rperera\documents\github\obligatorio-p4\string.cpp
 	"String.h"
 	<iostream>
 	<string.h>
 	<stdio.h>
 
-1543370427 source:c:\users\rperera\documents\github\obligatorio-p4\suprema.cpp
+1543447652 source:c:\users\rperera\documents\github\obligatorio-p4\suprema.cpp
 	"Suprema.h"
 
-1543370458 c:\users\rperera\documents\github\obligatorio-p4\suprema.h
+1543447659 c:\users\rperera\documents\github\obligatorio-p4\suprema.h
 	"Bruja.h"
 	"Fecha.h"
 
-1543265685 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
+1543451299 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>
@@ -194,11 +202,11 @@
 1543370544 source:c:\users\rperera\documents\github\obligatorio-p4\bruja.cpp
 	"Bruja.h"
 
-1543376815 source:c:\users\rperera\documents\github\obligatorio-p4\brujas.cpp
+1543448572 source:c:\users\rperera\documents\github\obligatorio-p4\brujas.cpp
 	"Brujas.h"
 	<stdio.h>
 
-1543372191 c:\users\rperera\documents\github\obligatorio-p4\brujas.h
+1543448552 c:\users\rperera\documents\github\obligatorio-p4\brujas.h
 	"Bruja.h"
 
 1543368669 source:c:\users\rperera\documents\github\obligatorio-p4\especial.cpp
@@ -206,4 +214,12 @@
 
 1543368633 c:\users\rperera\documents\github\obligatorio-p4\especial.h
 	"Hechizo.h"
+
+1543448717 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
+	"Fachada.h"
+
+1543447284 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
+	"Brujas.h"
+	"Suprema.h"
+	"Comun.h"
 

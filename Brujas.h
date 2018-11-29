@@ -1,7 +1,14 @@
 #ifndef BRUJAS_H_INCLUDED
 #define BRUJAS_H_INCLUDED
 #include "Bruja.h"
+
 class Brujas{
+
+    public:
+        Brujas ();
+        bool member (String);
+        void Insert (Bruja *);
+        Bruja * Find (String);
     private:
         struct Nodo {
             Bruja * info;
@@ -9,15 +16,8 @@ class Brujas{
             Nodo * hder;
         };
         Nodo * abb;
-        bool ExisteEnArbol (Nodo *, String);
-        void InsertEnArbol (Nodo * &, Bruja *);
-        Bruja * ObtenerDelArbol (Nodo *, String);
-    public:
-        Brujas ();
-        bool member (String);
-        void Insert (Bruja *);
-        Bruja * Find (String);
-
+        void InsertEnArbol (Bruja *, Nodo * &);
+        //Bruja * ObtenerDelArbol (Nodo *, String);
 };
 
 #endif // BRUJAS_H_INCLUDED

@@ -2,7 +2,7 @@
 #include "Utiles.h"
 #include "String.h"
 #include <stdio.h>
-
+/*
 
 void menuPrincipal(int &op){
     borrarPantalla();
@@ -78,3 +78,4 @@ void imprimirBordeDivisor(int largo){
     }
     printf("%c", T_D);
 }
+*/

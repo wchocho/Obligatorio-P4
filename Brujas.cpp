@@ -1,66 +1,55 @@
 #include "Brujas.h"
 #include <stdio.h>
 
-bool Brujas :: member (String id){
-    return ExisteEnArbol(abb, id);
-}
-void Brujas :: Insert (Bruja * bruja){
-    InsertEnArbol(abb, bruja);
-}
-Bruja * Brujas :: Find (String id){
-    return ObtenerDelArbol(abb, id);
-}
-
 Brujas :: Brujas (){
     abb = NULL;
 }
-bool Brujas :: ExisteEnArbol (Nodo * n, String id){
+
+bool Brujas :: member (String id){
+    Nodo* abbAux = abb;
     bool exito = false;
-    while(! exito && n != NULL){
-        if(id == id){
+    while(! exito && abbAux != NULL){
+        if(abbAux->info->getIdentificador() == id){
             exito = true;
         }else{
-            if(id < n->info->getIdentificador()){
-                ExisteEnArbol(n->hizq, id);
+            if(abbAux->info->getIdentificador() < id){
+                abbAux = abbAux->hizq;
             }else{
-                ExisteEnArbol(n->hder, id);
+                abbAux = abbAux->hder;
             }
         }
     }
     return exito;
 }
 
-void Brujas :: InsertEnArbol (Nodo * &n, Bruja * bruja){
-    if(n == NULL){
-        n = new Nodo;
-        n->info = bruja;
-        n->hizq = NULL;
-        n->hder= NULL;
+void Brujas :: Insert (Bruja * bruja){
+    InsertEnArbol(bruja, abb);
+}
+
+void Brujas :: InsertEnArbol (Bruja* bruja, Nodo* &abb){
+    if(abb == NULL){
+        abb = new Nodo;
+        abb->info = bruja;
+        abb->hizq = NULL;
+        abb->hder= NULL;
     }else{
-        if (bruja->getIdentificador() < n->info->getIdentificador()){
-            InsertEnArbol(n->hizq, bruja);
+        if (bruja->getIdentificador() < abb->info->getIdentificador()){
+            InsertEnArbol(bruja, abb->hizq);
         }else{
-            InsertEnArbol(n->hizq, bruja);
+            InsertEnArbol(bruja, abb->hizq);
         }
     }
 }
 
-Bruja * Brujas :: ObtenerDelArbol (Nodo * n, String id){
 
-    /*ACA ESTOY TENIENDO PROBLEMAS CON EL STRCMP*/
-
-    //while(strcmp(id, n->info->getIdentificador()) == 0){
-    /*while(id.strcmp(n->info->getIdentificador()) == 0){
-        /*if(id < n->info->getIdentificador()){
-            ObtenerDelArbol(n->hizq, id);
+Bruja * Brujas :: Find (String id){
+    Nodo* abbAux = abb;
+    while(abbAux->info->getIdentificador() != id){
+        if(abbAux->info->getIdentificador() < id){
+            abbAux = abbAux->hizq;
         }else{
-            ObtenerDelArbol(n->hder, id);
+            abbAux = abbAux->hder;
         }
-
     }
-    */
-    return n->info;
-
+    return abbAux->info;
 }
-
-

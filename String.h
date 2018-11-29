@@ -1,45 +1,44 @@
 #ifndef STRING_H_INCLUDED
 #define STRING_H_INCLUDED
 
-int const MAX = 80;
-class String{
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+const int MAX = 1000;
+class String
+{
     private:
-        char * cadena;
+        char *cadena;
+        int _strlar(char*);
+        int _strlar(string);
+        void _strcop(char*&, char*);
+        void _strcop (char*, string);
+
     public:
-         // constructor por defecto.
         String();
+        String(const String&);
+        String(string);
+        virtual ~String();
 
-        // constructor común
-        String(char* s);
-
-        // constructor de copia
-        String(const String &);
-
-        // destructor
-        ~String();
-
-        // sobrecarga de asignación
-        String operator=(const String &);
-        // compara dos strings por igualdad.
-        bool operator==(String);
-
-        // compara dos strings alfabéticamente
-        bool operator< (String);
-
-        // concatenación de strings.
-        String operator+ (char *);
-
-        // lee un string desde la entrada estándar.
+        char* getCadena();
         void scan();
-
-        // muestra un string en la salida estándar
         void print();
+        //void print(const String&);
+        void print(char* s);
+        int strlar();
+        bool operator< (String);
+        bool operator== (String);
+        void operator= (const String&);
+        void operator= (char*);
+        bool operator!= (String);
+        //void operator= (const string &);
+        String operator+ (String&);
+        void strswp(String&);
+        bool strmen(char * , char * );
+        bool strcmp(char * , char * );
 
-
-        int strlen(char *);
-        void strcpy(char *, char * &);
-        bool strcmp(char *, char *);
-        bool strmen(char *, char *);
 
 };
 

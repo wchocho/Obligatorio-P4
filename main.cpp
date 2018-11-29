@@ -1,57 +1,49 @@
 #include <stdio.h>
-#include "Menu.h"
+#include <conio.h>
 #include "Utiles.h"
-
 
 int main(){
     int op = 0;
+    Utiles utiles;
     do{
-        menuPrincipal(op);
+        utiles.imprimirMenu();
+        cout << "Ingrese una opcion: ";
+        cin >> op;
         switch(op){
             case 1:
-
-                continuar();
+                utiles.registrarNuevaBrujaSuprema();
                 break;
 
             case 2:
-                continuar();
                 break;
 
             case 3 :{
-                continuar();
                 break;
             }
 
             case 4:{
-                continuar();
                 break;
             }
-
             case 5:{
-                int op2 = 0;
-                do{
-                    menuListados(op2);
-                    switch(op2){
-                        case 1: //R3
-                            continuar();
-                            break;
-
-                        case 2: //R4
-                            continuar();
-                            break;
-
-                        case 3: //R5
-                            continuar();
-                            break;
-                        case 4: //R7
-                            continuar();
-                            break;
-                    }
-                }while(op2 != 5);
-                menuPrincipal(op);
                 break;
             }
+            case 6:{
+                break;
+            }
+            case 7:{
+                break;
+            }
+            case 8:{
+                break;
+            }
+
         }
-    }while(op != 6);
+        if (op != 8){
+            cin.ignore();
+            getch();
+
+        }
+    }while(op != 8);
+     return 0;
 }
 

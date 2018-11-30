@@ -40,7 +40,7 @@ especiales = 0;
 for (int i = 0; i < tope;i++){
     if (arre[i]->getTipoHechizo() == 0){
         comunes ++;
-        cout<<"tacontndocualquiera";}
+    }
     else{
         especiales ++;
 }

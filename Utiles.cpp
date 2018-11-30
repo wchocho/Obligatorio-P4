@@ -423,8 +423,8 @@ cout << "Ingrese su identificador de la bruja: ";
         int comunes =0;
         int especiales=0;
         bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
-cout << comunes;
-cout << especiales;
+cout << "Hechizos Comunes: " << comunes;
+cout << "Hechizos Especiales: " << especiales;
 
 
 

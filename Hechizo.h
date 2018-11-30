@@ -11,7 +11,7 @@ class Hechizo{
         Hechizo(const Hechizo &);
         int getNumero();
         String getNombre();
-        int getTipoHechizo();
+        virtual int getTipoHechizo();
 
 };
 

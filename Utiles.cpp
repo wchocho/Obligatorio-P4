@@ -17,7 +17,7 @@ void Utiles::imprimirMenu()
     cout << " 5 - Listado de detalle por bruja - Requerimiento 4" << endl;
     cout << " 6 - Listado de detalle de Mayor Bruja Suprema Requerimiento 5 " << endl;
     cout << " 7 - Listado de detalle por bruja y hechizo" << endl;
-    cout << "8 - Salir" << endl << endl;
+    cout << " 8 - Salir" << endl << endl;
 
 
 }
@@ -51,7 +51,7 @@ void Utiles::registrarNuevaBruja()
         do
         {
             reintentar = false;
-            cout << "Indique el tipo de bruja que desea registrar ( (0)Suprema, (1)Comun )";
+            cout << "Indique el tipo de bruja que desea registrar ( (0)Suprema, (1)Comun ): ";
             cin >> tipo_bruja;
 
             switch (tipo_bruja)
@@ -80,6 +80,7 @@ void Utiles::registrarNuevaBruja()
 
             case 1:  //comun
             {
+                /* AGREGARA ALGUN CONTROL QUE VERIFIQUE SI EXISTE ALGUNA SUPREMA INGRESADA Y SI NO HAY NO SE PUEDE REALIZAR EL INSERT DE LA COMUN*/
                 String region_origen;
                 bool vuela_escoba = false;
                 char vuela_escoba_aux;
@@ -88,23 +89,17 @@ void Utiles::registrarNuevaBruja()
                 cout << "Ingrese la region de origen" << endl;
                 region_origen.scan();
 
-
-
-
-                //NO ESTA LEYENDO EL CHAR DE FORMA CORRECTA - REVISAR
-
                 do
                 {
-                    cout << " Vuela en escoba? (s, n)";
+                    cout << "Vuela en escoba? (s, n)";
                     cin >> vuela_escoba_aux;
                 }
                 while (vuela_escoba_aux != 's' && vuela_escoba_aux != 'n');
+
                 if(vuela_escoba_aux == 's' || vuela_escoba_aux == 'S' )
                 {
                     vuela_escoba = true;
                 }
-
-
 
                 cout << "Ingrese el identificador de la bruja suprema para su asignacion." << endl;
                 id_suprema.scan();
@@ -169,22 +164,28 @@ bool Utiles::preguntoReintentar (string msg)
 
 
 void Utiles :: mayorSuprema(){
-Iterador itera = fachada.getSupremas();
-Suprema * su;
-if (itera.hayMasBrujas()){
-    su = (Suprema *)itera.proximaBruja();
-    Suprema * actual = su;
-    while (itera.hayMasBrujas()){
+    Iterador itera = fachada.getSupremas();
+    Suprema * su = NULL;
+    if (itera.hayMasBrujas()){
+        su = (Suprema *)itera.proximaBruja();
+        Suprema * actual = su;
+        while (itera.hayMasBrujas()){
 
-        actual=((Suprema *)itera.proximaBruja());
-        if (actual->getFechaNacimiento()<su->getFechaNacimiento())
-            su = actual;
+            actual=((Suprema *)itera.proximaBruja());
+            if (actual->getFechaNacimiento()<su->getFechaNacimiento())
+                su = actual;
+
+        }
+
 
     }
+    // agregado para el caso donde se ingresa al requeriminto sin ingresar brujas previamente.
+    if(su != NULL){
+        imprimirDatosSuprema(su);
+    }else{
+        cout << "No existen brujas cargadas";
+    }
 
-
-}
-imprimirDatosSuprema(su);
 
 }
 
@@ -195,12 +196,12 @@ void Utiles::listadoBrujas ()
     if (iterador.hayMasBrujas())
     {
         system("CLS");
-        cout << "LISTADO DE BRUJAS" << endl << endl;
+        cout << "LISTADO DE BRUJAS ORDENADAS DE FORMA ALFABETICA" << endl << endl;
         while (iterador.hayMasBrujas())
         {
             Bruja* bruja = (Bruja*)iterador.proximaBruja();
             imprimirDatosBasicosBruja(bruja);
-            //bruja->getNombre().print(); cout << " - ";
+            cout << endl;
         }
     }
     else
@@ -321,7 +322,7 @@ void Utiles :: imprimirDatosSuprema(Suprema* bruja_suprema)
     // impresion de numeros
     cout << " - Cantidad de poderes: " << bruja_suprema->getCantPoderes() ;
     cout << " - Puntos de Poder: " << bruja_suprema->calcularPuntos();
-
+    cout << endl;
 }
 void Utiles :: imprimirDatosComun(Comun* bruja_comun)
 {
@@ -334,7 +335,7 @@ void Utiles :: imprimirDatosComun(Comun* bruja_comun)
     cout << " - Vuela en escoba: ";
     resu.print();
     cout << " - Puntos de Poder: " << bruja_comun->calcularPuntos();
-    cout;
+    cout << endl;
 }
 
 String Utiles :: boolAString(bool aux)
@@ -360,19 +361,18 @@ void Utiles :: registrarHechizo()
 
     if (!existe)
     {
-        cout << "Error: El identificador ingresado no corresponde a una bruja registrada.";
-
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
     }
     else
     {
         Bruja * bru = fachada.ObtenerBruja(identificador);
         int opcion;
-        cout<< "Indique que tipo de hechizo desea ingresar - (0) Comun (1) Especial";
+        cout<< "Indique que tipo de hechizo desea ingresar - ( (0) Comun (1) Especial ) :";
         cin >> opcion;
 
         if (opcion == 0)
         {
-            cout<< "Ingrese el nombre del hechizo";
+            cout<< "Ingrese el nombre del hechizo: ";
             String nom;
             nom.scan();
             int numero = bru->getHechizos().getTope();
@@ -382,18 +382,18 @@ void Utiles :: registrarHechizo()
         }
         else
         {
-String nom, des;
-int year;
+            String nom, des;
+            int year;
 
-            cout<< "Ingrese el nombre del hechizo";
+            cout<< "Ingrese el nombre del hechizo: ";
 
             nom.scan();
-            cout << "Ingrese la descripcion del hechizo";
+            cout << "Ingrese la descripcion del hechizo: ";
             des.scan();
 
 
             int numero = bru->getHechizos().getTope();
-            cout << "Ingrese el año de manifiesto";
+            cout << "Ingrese el año de manifiesto: ";
             cin >> year;
 
             Especial * he = new Especial(numero,nom, year, des);
@@ -414,7 +414,7 @@ cout << "Ingrese su identificador de la bruja: ";
 
     if (!existe)
     {
-        cout << "Error: El identificador ingresado no corresponde a una bruja registrada.";
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada."; ;
 
     }
     else
@@ -423,8 +423,8 @@ cout << "Ingrese su identificador de la bruja: ";
         int comunes =0;
         int especiales=0;
         bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
-cout << "Hechizos Comunes: " << comunes;
-cout << "Hechizos Especiales: " << especiales;
+        cout << "Hechizos Comunes: " << comunes << endl;
+        cout << "Hechizos Especiales: " << especiales << endl;
 
 
 

@@ -32,15 +32,9 @@ Iterador Fachada::listarBruja(){
 }
 
  void Fachada :: registrarHechizo(String id , Hechizo * he){
-
- Bruja * bru = ObtenerBruja(id);
-bru->insertarHechizos(he);
-
-cout << bru->getHechizos().getTope();
-
-
-
- }
+    Bruja * bru = ObtenerBruja(id);
+    bru->insertarHechizos(he);
+}
 
 
 

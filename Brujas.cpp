@@ -33,10 +33,10 @@ void Brujas :: InsertEnArbol (Bruja* bruja, Nodo* &abb){
         abb->hizq = NULL;
         abb->hder= NULL;
     }else{
-        if (bruja->getIdentificador() < abb->info->getIdentificador()){
+        if (bruja->getIdentificador() < abb->info->getIdentificador() ){
             InsertEnArbol(bruja, abb->hizq);
         }else{
-            InsertEnArbol(bruja, abb->hizq);
+            InsertEnArbol(bruja, abb->hder);
         }
     }
 }
@@ -48,9 +48,9 @@ Iterador Brujas::listarBruja (){
 }
 
 Iterador Brujas::darSupremas(){
-Iterador iterador;
-darSupremasRec(abb, iterador);
-return iterador;
+    Iterador iterador;
+    darSupremasRec(abb, iterador);
+    return iterador;
 }
 
 void Brujas :: darSupremasRec(Nodo * abbAux, Iterador& iterador){
@@ -58,7 +58,7 @@ void Brujas :: darSupremasRec(Nodo * abbAux, Iterador& iterador){
   if (abbAux != NULL) {
 
       if ((abbAux->info->getTipoBruja() == 0))
-      iterador.insertarBruja(abbAux->info);
+        iterador.insertarBruja(abbAux->info);
 
         darSupremasRec(abbAux->hizq, iterador);
 
@@ -69,11 +69,18 @@ void Brujas :: darSupremasRec(Nodo * abbAux, Iterador& iterador){
 }
 
 
+/*
+void Brujas :: mostrarArbolOrdenado(Nodo* abbAux){
+    if(abbAux != NULL){
+        mostrarArbolOrdenado(abbAux->hizq);
+        abbAux->info->getIdentificador().print();
+        mostrarArbolOrdenado(abbAux->hder);
+    }
+
+}
 
 
-
-
-
+*/
 
 
 void Brujas::listarBrujaRec (Nodo* abbAux, Iterador& iterador){

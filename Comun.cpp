@@ -28,8 +28,11 @@ int Comun :: calcularPuntos(){
     getHechizos().cantidadHechizosPorTipo(comunes,especiales);
 
     total = total + comunes + especiales * 2;
-    if (getRegionOrigen().getCadena() == "Salem"){
+    String region;
+    region = "Salem";
+    if (getRegionOrigen() == region ){
         total ++;
+
     }
 
     return total;

@@ -30,6 +30,8 @@ void Iterador::insertarBruja (Bruja* bruja){
 }
 
 Bruja* Iterador::proximaBruja (){
+
+
     if (actual == NULL){
         actual = lppf.prim;
     }else{

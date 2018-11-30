@@ -18,6 +18,7 @@ class HechizosBruja{
         void cantidadHechizosPorTipo(int &, int&);
         Hechizo* getHechizo(int);
 
+
  };
 
 #endif // HECHIZOSBRUJA_H_INCLUDED

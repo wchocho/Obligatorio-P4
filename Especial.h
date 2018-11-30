@@ -11,6 +11,8 @@ class Especial : public Hechizo{
         Especial(int, String, int, String);
         int getAnioManifiesto();
         String getDescripcion();
+        int getTipoHechizo();
+
 
 };
 

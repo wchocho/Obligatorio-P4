@@ -11,3 +11,8 @@ int Especial :: getAnioManifiesto (){
 String Especial:: getDescripcion (){
     return descripcion;
 }
+
+int Especial :: getTipoHechizo(){
+return 1;
+
+}

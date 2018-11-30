@@ -15,6 +15,17 @@ int Suprema :: getTipoBruja(){
 }
 int Suprema :: calcularPuntos(){
     // èndiente de implementae
+    int total = cantPoderes;
+    int comunes, especiales;
+    getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+    Fecha f(01,01,1900);
+    total = total + comunes * 2 + especiales * 4;
+    if (getFechaNacimiento()<f){
+        total = total + 5;
+    }
+
+    return total;
+
     return 0;
 
 }

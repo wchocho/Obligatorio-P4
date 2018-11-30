@@ -29,8 +29,7 @@ Iterador Fachada::listarBruja(){
 bru->insertarHechizos(he);
 
 cout << bru->getHechizos().getTope();
-//if (pe == true)
-//cout << "Macana";
+
 
 
  }

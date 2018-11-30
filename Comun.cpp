@@ -22,7 +22,20 @@ int Comun :: getTipoBruja(){
 }
 
 int Comun :: calcularPuntos(){
-    // èndiente de implementae
+    int total = 0;
+    int comunes, especiales;
+
+    getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+
+    total = total + comunes + especiales * 2;
+    if (getRegionOrigen().getCadena() == "Salem"){
+        total ++;
+    }
+
+    return total;
+
     return 0;
 
 }
+
+

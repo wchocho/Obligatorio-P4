@@ -221,6 +221,9 @@ void Utiles :: listadoDetallePorBruja()
     }
 }
 
+//listadoDetalleBrujaHechizos();
+
+
 void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja)
 {
     cout << "Identificador: ";

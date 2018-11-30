@@ -38,7 +38,7 @@ int main(){
                 break;
             }
             case 7:{
-                //utiles.listadoDetalleBrujaHechizos();
+//                utiles.listadoDetalleBrujaHechizos();
                 break;
             }
 

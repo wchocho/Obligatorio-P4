@@ -13,3 +13,6 @@ int Hechizo :: getNumero(){
 String Hechizo :: getNombre(){
     return nombre;
 }
+int Hechizo :: getTipoHechizo(){
+return 0;
+}

@@ -36,6 +36,8 @@ class Utiles
         void imprimirDatosSuprema(Suprema *);
         void imprimirDatosComun(Comun *);
         String boolAString(bool);
+        void cantidadHechizosPorTipo();
+
 
 
 };

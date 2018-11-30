@@ -13,6 +13,7 @@ String Especial:: getDescripcion (){
 }
 
 int Especial :: getTipoHechizo(){
+
 return 1;
 
 }

@@ -10,11 +10,11 @@ Utiles::Utiles():fachada()
 void Utiles::imprimirMenu()
 {
     system("CLS");
-    cout << " 1 - Registrar nueva bruja" << endl;
-    cout << " 2 - Regsitrar hechizo" << endl;
-    cout << " 3 - Cantidad de hechizos por bruja" << endl;
-    cout << " 4 - Listado de brujas alfabetico" << endl;
-    cout << " 5 - Listado de detalle por bruja" << endl;
+    cout << " 1 - Registrar nueva bruja - Requerimientos 1 y 2" << endl;
+    cout << " 2 - Regsitrar hechizo - Requerimiento 6" << endl;
+    cout << " 3 - Cantidad de hechizos por bruja - Requerimiento 8" << endl;
+    cout << " 4 - Listado de brujas alfabetico - Requerimiento 3" << endl;
+    cout << " 5 - Listado de detalle por bruja - Requerimiento 4" << endl;
     cout << " 6 - Listado de detalle por bruja mas antigua" << endl;
     cout << " 7 - Listado de detalle por bruja y hechizo" << endl;
     cout << "8 - Salir" << endl << endl;
@@ -253,6 +253,7 @@ void Utiles :: imprimirDatosSuprema(Suprema* bruja_suprema)
     cout ;
     // impresion de numeros
     cout << " - Cantidad de poderes: " << bruja_suprema->getCantPoderes() ;
+    cout << " - Puntos de Poder: " << bruja_suprema->calcularPuntos();
 
 }
 void Utiles :: imprimirDatosComun(Comun* bruja_comun)
@@ -265,6 +266,7 @@ void Utiles :: imprimirDatosComun(Comun* bruja_comun)
     resu = boolAString(bruja_comun->getVuelaEscoba());
     cout << " - Vuela en escoba: ";
     resu.print();
+    cout << " - Puntos de Poder: " << bruja_comun->calcularPuntos();
     cout;
 }
 
@@ -336,3 +338,27 @@ int year;
 
     }
 }
+
+void Utiles :: cantidadHechizosPorTipo(){
+cout << "Ingrese su identificador de la bruja: ";
+    String identificador;
+    identificador.scan();
+    bool existe = fachada.ExisteBruja(identificador);
+
+    if (!existe)
+    {
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada.";
+
+    }
+    else
+    {
+        Bruja * bru = fachada.ObtenerBruja(identificador);
+        int comunes =0;
+        int especiales=0;
+        bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+cout << comunes;
+cout << especiales;
+
+
+
+}}

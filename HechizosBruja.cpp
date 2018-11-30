@@ -38,11 +38,12 @@ void HechizosBruja :: cantidadHechizosPorTipo(int &comunes, int&especiales){
 comunes = 0;
 especiales = 0;
 for (int i = 0; i < tope;i++){
-    if (arre[i]->getTipoHechizo() == 0)
+    if (arre[i]->getTipoHechizo() == 0){
         comunes ++;
-    else
+        cout<<"tacontndocualquiera";}
+    else{
         especiales ++;
-
+}
 
 }
 

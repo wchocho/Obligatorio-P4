@@ -20,7 +20,7 @@ int main(){
             }
 
             case 3:{
-                //utiles.cantidadHechizosPorBruja();
+                utiles.cantidadHechizosPorTipo();
                 break;
 
             }

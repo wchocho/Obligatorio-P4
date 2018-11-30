@@ -47,6 +47,35 @@ Iterador Brujas::listarBruja (){
     return iterador;
 }
 
+Iterador Brujas::darSupremas(){
+Iterador iterador;
+darSupremasRec(abb, iterador);
+return iterador;
+}
+
+void Brujas :: darSupremasRec(Nodo * abbAux, Iterador& iterador){
+
+  if (abbAux != NULL) {
+
+      if ((abbAux->info->getTipoBruja() == 0))
+      iterador.insertarBruja(abbAux->info);
+
+        darSupremasRec(abbAux->hizq, iterador);
+
+        darSupremasRec(abbAux->hder, iterador);
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
 void Brujas::listarBrujaRec (Nodo* abbAux, Iterador& iterador){
     if (abbAux != NULL){
         listarBrujaRec (abbAux->hizq, iterador);
@@ -66,3 +95,6 @@ Bruja * Brujas :: Find (String id){
     }
     return abbAux->info;
 }
+
+
+

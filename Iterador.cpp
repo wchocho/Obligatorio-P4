@@ -38,6 +38,11 @@ Bruja* Iterador::proximaBruja (){
     return actual->info;
 }
 
+Bruja* Iterador::actualBruja (){
+    return actual->info;
+}
+
+
 bool Iterador::hayMasBrujas (){
     bool hayMas = false;
 
@@ -46,6 +51,7 @@ bool Iterador::hayMasBrujas (){
     }else{
         hayMas = (actual->sig != NULL);
     }
+
 
     return hayMas;
 }

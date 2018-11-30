@@ -16,3 +16,5 @@ String Hechizo :: getNombre(){
 int Hechizo :: getTipoHechizo(){
 return 0;
 }
+
+

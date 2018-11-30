@@ -15,7 +15,7 @@ void Utiles::imprimirMenu()
     cout << " 3 - Cantidad de hechizos por bruja - Requerimiento 8" << endl;
     cout << " 4 - Listado de brujas alfabetico - Requerimiento 3" << endl;
     cout << " 5 - Listado de detalle por bruja - Requerimiento 4" << endl;
-    cout << " 6 - Listado de detalle por bruja mas antigua" << endl;
+    cout << " 6 - Listado de detalle de Mayor Bruja Suprema Requerimiento 5 " << endl;
     cout << " 7 - Listado de detalle por bruja y hechizo" << endl;
     cout << "8 - Salir" << endl << endl;
 
@@ -168,6 +168,26 @@ bool Utiles::preguntoReintentar (string msg)
 }
 
 
+void Utiles :: mayorSuprema(){
+Iterador itera = fachada.getSupremas();
+Suprema * su;
+if (itera.hayMasBrujas()){
+    su = (Suprema *)itera.proximaBruja();
+    Suprema * actual = su;
+    while (itera.hayMasBrujas()){
+
+        actual=((Suprema *)itera.proximaBruja());
+        if (actual->getFechaNacimiento()<su->getFechaNacimiento())
+            su = actual;
+
+    }
+
+
+}
+imprimirDatosSuprema(su);
+
+}
+
 void Utiles::listadoBrujas ()
 {
     Iterador iterador = fachada.listarBruja();
@@ -193,6 +213,8 @@ void Utiles :: listadoDetallePorBruja()
 {
     bool existe=false;
     String identificador;
+
+
     system("CLS");
     cout << "DETALLE POR BRUJA" << endl << endl;
     cout << "Ingrese el indentificador de la bruja que desea ver en detalle: ";
@@ -208,6 +230,7 @@ void Utiles :: listadoDetallePorBruja()
         bruja_aux = fachada.ObtenerBruja(identificador);
         if(bruja_aux->getTipoBruja() == 0)
         {
+
             imprimirDatosSuprema((Suprema*)bruja_aux);
         }
         else
@@ -221,7 +244,51 @@ void Utiles :: listadoDetallePorBruja()
     }
 }
 
-//listadoDetalleBrujaHechizos();
+
+void Utiles :: listadoDetalleBrujaHechizos(){
+ bool existe=false;
+    String identificador;
+   int numhechizo;
+
+    system("CLS");
+    cout << "DETALLE POR BRUJA" << endl << endl;
+    cout << "Ingrese el indentificador de la bruja que desea ver en detalle: ";
+    identificador.scan();
+    existe = fachada.ExisteBruja(identificador);
+    if(!existe)
+    {
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
+    }
+    else
+    {
+        Bruja * bruja_aux = NULL;
+        bruja_aux = fachada.ObtenerBruja(identificador);
+        cout << "Ingrese el número de hechizo que desea ver en detalle";
+        cin >> numhechizo;
+        Hechizo * h( bruja_aux->getHechizos().getHechizo(numhechizo));
+        if (h->getTipoHechizo()==0){
+
+            cout << "Numero" << h->getNumero();
+            cout << endl;
+            cout << "Nombre" << endl;
+            h->getNombre().print();
+        }
+        else{
+
+            cout << "Numero" << ((Especial *)h)->getNumero();
+            cout << endl;
+            cout << "Nombre" << endl;
+            ((Especial *)h)->getNombre().print();
+            cout << endl;
+            cout << "Anio" << ((Especial *)h)->getAnioManifiesto() ;
+
+        }
+    }
+
+
+
+}
+
 
 
 void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja)

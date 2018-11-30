@@ -34,11 +34,11 @@ int main(){
                 break;
             }
             case 6:{
-                //utiles.listadoDetalleBrujaMasAntigua();
+                utiles.mayorSuprema();
                 break;
             }
             case 7:{
-//                utiles.listadoDetalleBrujaHechizos();
+              utiles.listadoDetalleBrujaHechizos();
                 break;
             }
 

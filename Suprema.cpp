@@ -26,6 +26,6 @@ int Suprema :: calcularPuntos(){
 
     return total;
 
-    return 0;
+
 
 }

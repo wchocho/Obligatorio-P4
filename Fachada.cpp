@@ -13,6 +13,14 @@ bool Fachada :: ExisteBruja(String id){
     return brujas.member(id);
 }
 
+Iterador Fachada :: getSupremas(){
+
+return brujas.darSupremas();
+
+
+
+}
+
 Bruja * Fachada :: ObtenerBruja(String id){
     Bruja * bruja = NULL;
     bruja = brujas.Find(id);

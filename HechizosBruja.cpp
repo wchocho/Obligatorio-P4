@@ -49,4 +49,9 @@ for (int i = 0; i < tope;i++){
 
 }
 
+Hechizo* HechizosBruja:: getHechizo(int i){
+return arre[i];
+
+}
+
 

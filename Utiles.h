@@ -27,7 +27,7 @@ class Utiles
         //void cantidadHechizosPorBruja();
         void listadoDetallePorBruja();
         //void listadoDetalleBrujaMasAntigua();
-        //void listadoDetalleBrujaHechizos();
+        void listadoDetalleBrujaHechizos();
 
 
         // auxiliares
@@ -37,6 +37,8 @@ class Utiles
         void imprimirDatosComun(Comun *);
         String boolAString(bool);
         void cantidadHechizosPorTipo();
+        void listadoDetalleBrujaMasAntigua();
+        void mayorSuprema();
 
 
 

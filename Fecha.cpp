@@ -38,19 +38,25 @@ void Fecha::Setanio(int val){
 }
 
 bool Fecha::operator< (Fecha f){
-    if (anio < f.anio){
-        return true;
-    }else if (anio == f.anio){
-        if (mes < f.mes){
-            return true;
-        }else if (mes == f.mes){
-            if (dia < f.dia){
-                return true;
-            }
-        }
-    }
+    bool es = false;
+ if (anio < f.anio)
+ es = true;
+ else
+if (anio > f.anio)
+ es = false;
+ else
+if (mes < f.mes)
+ es = true;
+ else
+if (mes > f.mes)
+ es = false;
+ else
+if (dia < f.dia)
+ es = true;
+ else
+ es = false;
+ return es;
 
-    return false;
 }
 
 bool Fecha::operator== (Fecha f){

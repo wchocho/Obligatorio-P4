@@ -20,6 +20,8 @@ class Fachada
         Bruja * ObtenerBruja(String);
         Iterador listarBruja();
         void registrarHechizo(String  , Hechizo *);
+        void listadoDetalleBrujaMasAntigua(Brujas);
+        Iterador getSupremas();
 };
 
 #endif // FACHADA_H_INCLUDED

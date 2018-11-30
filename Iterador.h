@@ -29,6 +29,7 @@ class Iterador {
         void insertarBruja (Bruja*);
         Bruja* proximaBruja ();
         bool hayMasBrujas ();
+        Bruja* actualBruja ();
 
     protected:
 

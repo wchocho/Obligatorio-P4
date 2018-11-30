@@ -43,12 +43,12 @@ int main(){
             }
 
         }
-        if (op != 7){
+        if (op != 8){
             cin.ignore();
             getch();
 
         }
-    }while(op != 7);
+    }while(op != 8);
      return 0;
 }
 

@@ -7,6 +7,7 @@
 #include "Bruja.h"
 #include "Suprema.h"
 #include "Comun.h"
+#include "Especial.h"
 class Utiles
 {
     private:

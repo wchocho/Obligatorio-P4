@@ -293,12 +293,13 @@ void Utiles :: registrarHechizo()
     }
     else
     {
-   Bruja * bru = fachada.ObtenerBruja(identificador);
+        Bruja * bru = fachada.ObtenerBruja(identificador);
         int opcion;
         cout<< "Indique que tipo de hechizo desea ingresar - (0) Comun (1) Especial";
         cin >> opcion;
 
-        if (opcion == 0){
+        if (opcion == 0)
+        {
             cout<< "Ingrese el nombre del hechizo";
             String nom;
             nom.scan();
@@ -307,9 +308,25 @@ void Utiles :: registrarHechizo()
 
             fachada.registrarHechizo(identificador, he);
         }
-        else{
+        else
+        {
+String nom, des;
+int year;
+
+            cout<< "Ingrese el nombre del hechizo";
+
+            nom.scan();
+            cout << "Ingrese la descripcion del hechizo";
+            des.scan();
 
 
+            int numero = bru->getHechizos().getTope();
+            cout << "Ingrese el año de manifiesto";
+            cin >> year;
+
+            Especial * he = new Especial(numero,nom, year, des);
+
+            fachada.registrarHechizo(identificador, he);
 
         }
 

@@ -22,7 +22,7 @@ class Utiles
         //impresiones
         void imprimirMenu ();
         void listadoBrujas();
-        //void registrarHechizo();
+        void registrarHechizo();
         //void cantidadHechizosPorBruja();
         void listadoDetallePorBruja();
         //void listadoDetalleBrujaMasAntigua();

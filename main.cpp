@@ -15,7 +15,7 @@ int main(){
                 break;
 
             case 2 :{
-                //utiles.registrarHechizo();
+                utiles.registrarHechizo();
                 break;
             }
 

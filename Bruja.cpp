@@ -20,6 +20,9 @@ HechizosBruja Bruja :: getHechizos(){
     return hechizos;
 }
 
+void Bruja :: insertarHechizos(Hechizo * he){
+hechizos.insBack(he);
+}
 
 
 

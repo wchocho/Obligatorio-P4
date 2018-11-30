@@ -17,9 +17,10 @@ class Bruja{
         String getNombre();
         HechizosBruja getHechizos();
 
-
+         void  insertarHechizos(Hechizo *);
         virtual int getTipoBruja() = 0;
         virtual int calcularPuntos() = 0;
+
 
 };
 

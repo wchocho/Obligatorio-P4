@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include <conio.h>
 
-Utiles::Utiles():fachada(){
+Utiles::Utiles():fachada()
+{
 }
 
-void Utiles::imprimirMenu(){
+void Utiles::imprimirMenu()
+{
     system("CLS");
     cout << " 1 - Registrar nueva bruja" << endl;
     cout << " 2 - Regsitrar hechizo" << endl;
@@ -20,7 +22,8 @@ void Utiles::imprimirMenu(){
 
 }
 
-void Utiles::registrarNuevaBruja(){
+void Utiles::registrarNuevaBruja()
+{
     bool existe = false;
     Bruja * bruja = NULL;
     String identificador;
@@ -34,128 +37,160 @@ void Utiles::registrarNuevaBruja(){
     identificador.scan();
     existe = fachada.ExisteBruja(identificador);
 
-    if (existe){
+    if (existe)
+    {
         cout << "Error: ya existe una bruja registrada con el identificador";
-    }else{
+    }
+    else
+    {
         String nombre;
         HechizosBruja hechizos;
 
         cout << "Ingrese su nombre: ";
         nombre.scan();
-        do{
+        do
+        {
             reintentar = false;
-            cout << "Indique el tipo de bruja que desea registrar ( (0)Suprema, (1)Comun )"; cin >> tipo_bruja;
+            cout << "Indique el tipo de bruja que desea registrar ( (0)Suprema, (1)Comun )";
+            cin >> tipo_bruja;
 
-            switch (tipo_bruja){
-                case 0:{ //suprema
-                    Fecha fecha_nacimiento;
-                    int cant_poderes = 0;
-                    cout << "Ingrese la fecha de nacimiento" << endl;
-                    fecha_nacimiento.scan();
-                    if (!fecha_nacimiento.esValida()){
-                        reintentar = preguntoReintentar("Error: fecha invalida");
-                    }else{
-                        bruja = new Suprema(identificador, nombre, hechizos, fecha_nacimiento, cant_poderes);
-                        fachada.RegistrarBruja(bruja, error);
-                        if (!error){
-                            cout << "Bruja suprema registrada" << endl;
-                        }
-                    }
-                    break;
+            switch (tipo_bruja)
+            {
+            case 0:  //suprema
+            {
+                Fecha fecha_nacimiento;
+                int cant_poderes = 0;
+                cout << "Ingrese la fecha de nacimiento" << endl;
+                fecha_nacimiento.scan();
+                if (!fecha_nacimiento.esValida())
+                {
+                    reintentar = preguntoReintentar("Error: fecha invalida");
                 }
-
-                case 1:{ //comun
-                    String region_origen;
-                    bool vuela_escoba = false;
-                    char vuela_escoba_aux;
-                    String id_suprema;
-
-                    cout << "Ingrese la region de origen" << endl;
-                    region_origen.scan();
-
-
-
-
-                    //NO ESTA LEYENDO EL CHAR DE FORMA CORRECTA - REVISAR
-
-                    do{
-                        cout << " Vuela en escoba? (s, n)";
-                        cin >> vuela_escoba_aux;
-                    }while (vuela_escoba_aux != 's' && vuela_escoba_aux != 'n');
-                    if(vuela_escoba_aux == 's' || vuela_escoba_aux == 'S' ){
-                        vuela_escoba = true;
+                else
+                {
+                    bruja = new Suprema(identificador, nombre, hechizos, fecha_nacimiento, cant_poderes);
+                    fachada.RegistrarBruja(bruja, error);
+                    if (!error)
+                    {
+                        cout << "Bruja suprema registrada" << endl;
                     }
-
-
-
-                    cout << "Ingrese el identificador de la bruja suprema para su asignacion." << endl;
-                    id_suprema.scan();
-
-
-                    if( fachada.ExisteBruja(id_suprema)){
-                        Bruja * suprema_aux = NULL;
-                        suprema_aux = fachada.ObtenerBruja(id_suprema);
-                        if(suprema_aux->getTipoBruja()== 0){
-
-                            bruja = new Comun(identificador, nombre, hechizos, region_origen, vuela_escoba, (Suprema*)suprema_aux);
-                            fachada.RegistrarBruja(bruja, error);
-
-                            if (!error){
-                                cout << "Bruja comun registrada" << endl;
-                            }
-                        }else{
-                            cout << "Error: El identificador ingresado no corresponde a una bruja suprema." << endl;
-                        }
-
-                    }else{
-                        cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
-
-                    }
-
-                    break;
                 }
-
-                default:
-                    reintentar = preguntoReintentar("Error: La opcion seleccionada no esta dentro de las valida, verifique.");
+                break;
             }
-        }while (reintentar);
+
+            case 1:  //comun
+            {
+                String region_origen;
+                bool vuela_escoba = false;
+                char vuela_escoba_aux;
+                String id_suprema;
+
+                cout << "Ingrese la region de origen" << endl;
+                region_origen.scan();
+
+
+
+
+                //NO ESTA LEYENDO EL CHAR DE FORMA CORRECTA - REVISAR
+
+                do
+                {
+                    cout << " Vuela en escoba? (s, n)";
+                    cin >> vuela_escoba_aux;
+                }
+                while (vuela_escoba_aux != 's' && vuela_escoba_aux != 'n');
+                if(vuela_escoba_aux == 's' || vuela_escoba_aux == 'S' )
+                {
+                    vuela_escoba = true;
+                }
+
+
+
+                cout << "Ingrese el identificador de la bruja suprema para su asignacion." << endl;
+                id_suprema.scan();
+
+
+                if( fachada.ExisteBruja(id_suprema))
+                {
+                    Bruja * suprema_aux = NULL;
+                    suprema_aux = fachada.ObtenerBruja(id_suprema);
+                    if(suprema_aux->getTipoBruja()== 0)
+                    {
+
+                        bruja = new Comun(identificador, nombre, hechizos, region_origen, vuela_escoba, (Suprema*)suprema_aux);
+                        fachada.RegistrarBruja(bruja, error);
+
+                        if (!error)
+                        {
+                            cout << "Bruja comun registrada" << endl;
+                        }
+                    }
+                    else
+                    {
+                        cout << "Error: El identificador ingresado no corresponde a una bruja suprema." << endl;
+                    }
+
+                }
+                else
+                {
+                    cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
+
+                }
+
+                break;
+            }
+
+            default:
+                reintentar = preguntoReintentar("Error: La opcion seleccionada no esta dentro de las valida, verifique.");
+            }
+        }
+        while (reintentar);
     }
 
 }
 
 
 
-bool Utiles::preguntoReintentar (string msg){
+bool Utiles::preguntoReintentar (string msg)
+{
     char reintentar;
 
-    do{
+    do
+    {
         cout << endl << msg << endl;
         cout << "¿Desea intentarlo nuevamente? (s, n)?: ";
         cin.ignore();
         reintentar = getchar();
-    }while (reintentar != 's' && reintentar != 'n');
+    }
+    while (reintentar != 's' && reintentar != 'n');
 
     return reintentar == 's';
 }
 
 
-void Utiles::listadoBrujas (){
+void Utiles::listadoBrujas ()
+{
     Iterador iterador = fachada.listarBruja();
 
-    if (iterador.hayMasBrujas()){
+    if (iterador.hayMasBrujas())
+    {
         system("CLS");
         cout << "LISTADO DE BRUJAS" << endl << endl;
-        while (iterador.hayMasBrujas()){
+        while (iterador.hayMasBrujas())
+        {
             Bruja* bruja = (Bruja*)iterador.proximaBruja();
             imprimirDatosBasicosBruja(bruja);
             //bruja->getNombre().print(); cout << " - ";
         }
-    }else{
+    }
+    else
+    {
         cout << "ERROR: no hay brujas ingresadas en el sistema";
     }
 }
 
-void Utiles :: listadoDetallePorBruja(){
+void Utiles :: listadoDetallePorBruja()
+{
     bool existe=false;
     String identificador;
     system("CLS");
@@ -163,14 +198,20 @@ void Utiles :: listadoDetallePorBruja(){
     cout << "Ingrese el indentificador de la bruja que desea ver en detalle: ";
     identificador.scan();
     existe = fachada.ExisteBruja(identificador);
-    if(!existe){
+    if(!existe)
+    {
         cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
-    }else{
+    }
+    else
+    {
         Bruja * bruja_aux = NULL;
         bruja_aux = fachada.ObtenerBruja(identificador);
-        if(bruja_aux->getTipoBruja() == 0){
+        if(bruja_aux->getTipoBruja() == 0)
+        {
             imprimirDatosSuprema((Suprema*)bruja_aux);
-        }else{
+        }
+        else
+        {
             Bruja * bruja_suprema = NULL;
             imprimirDatosComun((Comun*)bruja_aux);
             Comun *c = (Comun*)bruja_aux;
@@ -180,39 +221,98 @@ void Utiles :: listadoDetallePorBruja(){
     }
 }
 
-void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja){
-    cout << "Identificador: "; bruja->getIdentificador().print(); cout ;
-    cout << " - Nombre: "; bruja->getNombre().print(); cout ;
+void Utiles :: imprimirDatosBasicosBruja(Bruja* bruja)
+{
+    cout << "Identificador: ";
+    bruja->getIdentificador().print();
+    cout ;
+    cout << " - Nombre: ";
+    bruja->getNombre().print();
+    cout ;
     String tipo;
-    if(bruja->getTipoBruja() == 0){
+    if(bruja->getTipoBruja() == 0)
+    {
         tipo = ("Suprema");
-    }else{
+    }
+    else
+    {
         tipo = ("Comun");
     }
-    cout << " - Tipo de bruja: ";  tipo.print();
+    cout << " - Tipo de bruja: ";
+    tipo.print();
 }
 
-void Utiles :: imprimirDatosSuprema(Suprema* bruja_suprema){
+void Utiles :: imprimirDatosSuprema(Suprema* bruja_suprema)
+{
     imprimirDatosBasicosBruja( (Bruja*)bruja_suprema);
-    cout << " - Fecha de nacimiento: "; bruja_suprema->getFechaNacimiento().imprimir(); cout ;
+    cout << " - Fecha de nacimiento: ";
+    bruja_suprema->getFechaNacimiento().imprimir();
+    cout ;
     // impresion de numeros
     cout << " - Cantidad de poderes: " << bruja_suprema->getCantPoderes() ;
 
 }
-void Utiles :: imprimirDatosComun(Comun* bruja_comun){
+void Utiles :: imprimirDatosComun(Comun* bruja_comun)
+{
     imprimirDatosBasicosBruja( (Bruja*)bruja_comun);
-    cout << " - Region de origen: "; bruja_comun->getRegionOrigen().print(); cout ;
+    cout << " - Region de origen: ";
+    bruja_comun->getRegionOrigen().print();
+    cout ;
     String resu;
     resu = boolAString(bruja_comun->getVuelaEscoba());
-    cout << " - Vuela en escoba: "; resu.print(); cout;
+    cout << " - Vuela en escoba: ";
+    resu.print();
+    cout;
 }
 
-String Utiles :: boolAString(bool aux){
+String Utiles :: boolAString(bool aux)
+{
     String resu;
-    if(aux){
+    if(aux)
+    {
         resu = ("SI");
-    }else{
+    }
+    else
+    {
         resu = ("NO");
     }
     return resu;
+}
+
+void Utiles :: registrarHechizo()
+{
+    cout << "Ingrese su identificador de la bruja: ";
+    String identificador;
+    identificador.scan();
+    bool existe = fachada.ExisteBruja(identificador);
+
+    if (!existe)
+    {
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada.";
+
+    }
+    else
+    {
+   Bruja * bru = fachada.ObtenerBruja(identificador);
+        int opcion;
+        cout<< "Indique que tipo de hechizo desea ingresar - (0) Comun (1) Especial";
+        cin >> opcion;
+
+        if (opcion == 0){
+            cout<< "Ingrese el nombre del hechizo";
+            String nom;
+            nom.scan();
+            int numero = bru->getHechizos().getTope();
+            Hechizo * he = new Hechizo(numero,nom);
+
+            fachada.registrarHechizo(identificador, he);
+        }
+        else{
+
+
+
+        }
+
+
+    }
 }

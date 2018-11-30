@@ -23,5 +23,17 @@ Iterador Fachada::listarBruja(){
     return brujas.listarBruja();
 }
 
+ void Fachada :: registrarHechizo(String id , Hechizo * he){
+
+ Bruja * bru = ObtenerBruja(id);
+bru->insertarHechizos(he);
+
+cout << bru->getHechizos().getTope();
+//if (pe == true)
+//cout << "Macana";
+
+
+ }
+
 
 

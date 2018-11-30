@@ -14,6 +14,7 @@ class HechizosBruja{
         bool estaLlena();
         void insBack (Hechizo*);
         bool existeHechizo(Hechizo*);
+        int getTope();
 
  };
 

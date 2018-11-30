@@ -141,7 +141,7 @@
 	"Suprema.h"
 	"String.h"
 
-1543523661 c:\users\rperera\documents\github\obligatorio-p4\bruja.h
+1543538689 c:\users\rperera\documents\github\obligatorio-p4\bruja.h
 	"String.h"
 	"HechizosBruja.h"
 
@@ -149,7 +149,7 @@
 	<iostream>
 	<stdio.h>
 
-1543515885 c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.h
+1543536120 c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.h
 	"Hechizo.h"
 
 1543369650 c:\users\rperera\documents\github\obligatorio-p4\hechizo.h
@@ -164,10 +164,10 @@
 1543368633 source:c:\users\rperera\documents\github\obligatorio-p4\hechizo.cpp
 	"Hechizo.h"
 
-1543515885 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
+1543536697 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
 	"HechizosBruja.h"
 
-1543526070 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
+1543536120 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
 	<stdio.h>
 	<conio.h>
 	"Utiles.h"
@@ -175,7 +175,7 @@
 1543265562 c:\users\rperera\documents\github\obligatorio-p4\menu.h
 	"String.h"
 
-1543530913 c:\users\rperera\documents\github\obligatorio-p4\utiles.h
+1543536120 c:\users\rperera\documents\github\obligatorio-p4\utiles.h
 	<cstdlib>
 	"Fachada.h"
 	"Fecha.h"
@@ -199,7 +199,7 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543533845 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
+1543537492 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>
@@ -222,13 +222,14 @@
 1543368633 c:\users\rperera\documents\github\obligatorio-p4\especial.h
 	"Hechizo.h"
 
-1543528861 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
+1543537590 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
 	"Fachada.h"
 
-1543528591 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
+1543537492 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
 	"Brujas.h"
 	"Suprema.h"
 	"Comun.h"
+	"Hechizo.h"
 
 1543518701 source:c:\users\admin.portable\documents\github\obligatorio-p4\brujas.cpp
 	"Brujas.h"

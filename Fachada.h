@@ -4,6 +4,8 @@
 #include "Brujas.h"
 #include "Suprema.h"
 #include "Comun.h"
+#include "Hechizo.h"
+
 class Fachada
 {
 
@@ -17,6 +19,7 @@ class Fachada
         bool ExisteBruja(String);
         Bruja * ObtenerBruja(String);
         Iterador listarBruja();
+        void registrarHechizo(String  , Hechizo *);
 };
 
 #endif // FACHADA_H_INCLUDED

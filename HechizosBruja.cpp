@@ -27,3 +27,9 @@ while(!existe && i<tope){
 }
     return existe;
 }
+
+int HechizosBruja:: getTope(){
+return tope;
+
+
+}

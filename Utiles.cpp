@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-
+#include <limits>
 Utiles::Utiles():fachada()
 {
 }
@@ -51,12 +51,24 @@ void Utiles::registrarNuevaBruja()
         do
         {
             reintentar = false;
-            cout << "Indique el tipo de bruja que desea registrar ( (0)Suprema, (1)Comun ): ";
+            cout << "Indique el tipo de bruja que desea registrar ( (1)Suprema, (2)Comun ): ";
             cin >> tipo_bruja;
+
+while (!(tipo_bruja == 1 || tipo_bruja ==2)){
+
+    cout << "Opción incorrecta !!!";
+    cout << "Indique el tipo de bruja que desea registrar ( (1)Suprema, (2)Comun ): ";
+
+
+            cin.clear(); // saca failbit
+
+  cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+  cin >> tipo_bruja;
+}
 
             switch (tipo_bruja)
             {
-            case 0:  //suprema
+            case 1:  //suprema
             {
                 Fecha fecha_nacimiento;
                 int cant_poderes = 0;
@@ -78,7 +90,7 @@ void Utiles::registrarNuevaBruja()
                 break;
             }
 
-            case 1:  //comun
+            case 2:  //comun
             {
                 /* AGREGARA ALGUN CONTROL QUE VERIFIQUE SI EXISTE ALGUNA SUPREMA INGRESADA Y SI NO HAY NO SE PUEDE REALIZAR EL INSERT DE LA COMUN*/
                 String region_origen;

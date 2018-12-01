@@ -54,17 +54,16 @@ void Utiles::registrarNuevaBruja()
             cout << "Indique el tipo de bruja que desea registrar ( (1)Suprema, (2)Comun ): ";
             cin >> tipo_bruja;
 
-while (!(tipo_bruja == 1 || tipo_bruja ==2)){
+            while (!(tipo_bruja == 1 || tipo_bruja ==2)){
 
-    cout << "Opción incorrecta !!!";
-    cout << "Indique el tipo de bruja que desea registrar ( (1)Suprema, (2)Comun ): ";
+                cout << "Opción incorrecta !!!";
+                cout << "Indique el tipo de bruja que desea registrar ( (1)Suprema, (2)Comun ): ";
 
+                cin.clear(); // saca failbit
 
-            cin.clear(); // saca failbit
-
-  cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
-  cin >> tipo_bruja;
-}
+                cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+                cin >> tipo_bruja;
+            }
 
             switch (tipo_bruja)
             {
@@ -165,9 +164,10 @@ bool Utiles::preguntoReintentar (string msg)
     do
     {
         cout << endl << msg << endl;
-        cout << "¿Desea intentarlo nuevamente? (s, n)?: ";
+        cout << "Desea intentarlo nuevamente? (s, n)?: ";
         cin.ignore();
         reintentar = getchar();
+
     }
     while (reintentar != 's' && reintentar != 'n');
 
@@ -276,24 +276,24 @@ void Utiles :: listadoDetalleBrujaHechizos(){
     {
         Bruja * bruja_aux = NULL;
         bruja_aux = fachada.ObtenerBruja(identificador);
-        cout << "Ingrese el número de hechizo que desea ver en detalle";
+        cout << "Ingrese el numero de hechizo que desea ver en detalle: ";
         cin >> numhechizo;
         Hechizo * h( bruja_aux->getHechizos().getHechizo(numhechizo));
         if (h->getTipoHechizo()==0){
 
-            cout << "Numero" << h->getNumero();
+            cout << "Numero: " << h->getNumero();
             cout << endl;
-            cout << "Nombre" << endl;
+            cout << "Nombre: ";
             h->getNombre().print();
         }
         else{
 
-            cout << "Numero" << ((Especial *)h)->getNumero();
+            cout << "Numero: " << ((Especial *)h)->getNumero();
             cout << endl;
-            cout << "Nombre" << endl;
+            cout << "Nombre: " ;
             ((Especial *)h)->getNombre().print();
             cout << endl;
-            cout << "Anio" << ((Especial *)h)->getAnioManifiesto() ;
+            cout << "Anio: " << ((Especial *)h)->getAnioManifiesto() ;
 
         }
     }
@@ -381,48 +381,52 @@ void Utiles :: registrarHechizo()
         int opcion;
         cout<< "Indique que tipo de hechizo desea ingresar - ( (1) Comun (2) Especial ) :";
         cin >> opcion;
-        while (!(opcion == 1 || opcion == 2)){
-            cout << "Opcion incorrecta !!!" << endl;
-            cout << "Indique que tipo de hechizo desea ingresar - ( (1) Comun (2) Especial ) :" << endl;
 
-            cin.clear(); // saca failbit
-            cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
-            cin >> opcion;
+        if ( bru->getHechizos().getTope() < CANT_HECHIZOS){
 
+            while ( !(opcion == 1 || opcion == 2)){
+                cout << "Opcion incorrecta !!!" << endl;
+                cout << "Indique que tipo de hechizo desea ingresar - ( (1) Comun (2) Especial ) :" << endl;
+
+                cin.clear(); // saca failbit
+                cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+                cin >> opcion;
+
+            }
+
+            if (opcion == 1)
+            {
+                cout<< "Ingrese el nombre del hechizo: ";
+                String nom;
+                nom.scan();
+                int numero = bru->getHechizos().getTope();
+                Hechizo * he = new Hechizo(numero,nom);
+
+                fachada.registrarHechizo(identificador, he);
+            }
+            else
+            {
+                String nom, des;
+                int year;
+
+                cout<< "Ingrese el nombre del hechizo: ";
+                nom.scan();
+                cout << "Ingrese la descripcion del hechizo: ";
+                des.scan();
+
+
+                int numero = bru->getHechizos().getTope();
+                cout << "Ingrese el año de manifiesto: ";
+                cin >> year;
+
+                Especial * he = new Especial(numero,nom, year, des);
+
+                fachada.registrarHechizo(identificador, he);
+
+            }
+        }else{
+            cout << "Error: No es posible registrar otro hechizo para la bruja seleccionada ya que alcanzo su maximo" << endl;
         }
-
-        if (opcion == 0)
-        {
-            cout<< "Ingrese el nombre del hechizo: ";
-            String nom;
-            nom.scan();
-            int numero = bru->getHechizos().getTope();
-            Hechizo * he = new Hechizo(numero,nom);
-
-            fachada.registrarHechizo(identificador, he);
-        }
-        else
-        {
-            String nom, des;
-            int year;
-
-            cout<< "Ingrese el nombre del hechizo: ";
-
-            nom.scan();
-            cout << "Ingrese la descripcion del hechizo: ";
-            des.scan();
-
-
-            int numero = bru->getHechizos().getTope();
-            cout << "Ingrese el año de manifiesto: ";
-            cin >> year;
-
-            Especial * he = new Especial(numero,nom, year, des);
-
-            fachada.registrarHechizo(identificador, he);
-
-        }
-
 
     }
 }

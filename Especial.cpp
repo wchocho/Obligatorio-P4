@@ -1,6 +1,6 @@
 #include "Especial.h"
 
-Especial :: Especial (int anio, String desc, int num, String nom) : Hechizo(num,nom) ,descripcion(desc){
+Especial :: Especial (int num, String nom, int anio, String desc) : Hechizo(num,nom) ,descripcion(desc){
     anioManifiesto= anio;
 }
 

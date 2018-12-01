@@ -19,7 +19,7 @@ tope++;
 bool HechizosBruja :: existeHechizo(Hechizo*he){
 int i=0;
 bool existe=false;
-while(!existe && i<tope){
+while(!existe && i<=tope){
     if(arre[i]==he)
         existe=true;
     else
@@ -37,7 +37,7 @@ return tope;
 void HechizosBruja :: cantidadHechizosPorTipo(int &comunes, int&especiales){
     comunes = 0;
     especiales = 0;
-    for (int i = 0; i < tope;i++){
+    for (int i = 0; i <= tope;i++){
         if (arre[i]->getTipoHechizo() == 0){
             comunes ++;
         }else{

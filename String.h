@@ -25,7 +25,7 @@ class String
         char* getCadena();
         void scan();
         void print();
-        //void print(const String&);
+
         void print(char* s);
         int strlar();
         bool operator< (String);
@@ -33,14 +33,11 @@ class String
         void operator= (const String&);
         void operator= (char*);
         bool operator!= (String);
-        //void operator= (const string &);
         String operator+ (String&);
-        void strswp(String&);
         bool strmen(char * , char * );
         bool strcmp(char * , char * );
-        void dmCadenaPrint();
         bool esNumerica();
-        int stringPorNumero();
+
 
 
 

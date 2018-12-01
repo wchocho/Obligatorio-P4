@@ -145,7 +145,7 @@
 	"String.h"
 	"HechizosBruja.h"
 
-1543701570 c:\users\rperera\documents\github\obligatorio-p4\string.h
+1543707079 c:\users\rperera\documents\github\obligatorio-p4\string.h
 	<iostream>
 	<stdio.h>
 
@@ -158,7 +158,7 @@
 1543703666 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
 	"Fecha.h"
 
-1543702834 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
+1543707130 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
 	<iostream>
 	<limits>
 

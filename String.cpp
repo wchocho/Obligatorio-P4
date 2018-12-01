@@ -187,43 +187,6 @@ String String::operator+ (String &s){
     return stringAux;
 }
 
-void String::strswp(String &s){
-    char *aux;
-    _strcop(aux, cadena);
-    _strcop(cadena, s.cadena);
-    _strcop(s.cadena, aux);
-    delete [] aux;
-}
-
-/*
-void intTOstring(int num, String &s){
-    char aux[MAX];
-    int i = 0, numAux;
-    do{
-        numAux = num % 10;
-        aux[i] = (char) (48 + numAux);
-        i++;
-        num /= 10;
-    }while(num != 0);
-    aux[i] = '\0';
-    strcop(s, aux);
-}
-*/
-/*
-void String::strinv(String &s1, String s2){
-    int largo = strlar(s2);
-    int i;
-    s1 = new char[largo + 1];
-    for(i=0; i<largo; i++){
-        s1[i] = s2[largo-i-1];;
-    }
-    s1[i] = '\0';
-}
-*/
-
-void String::dmCadenaPrint(){
-    cout << "dm cadena: " << &cadena;
-}
 
  bool String :: esNumerica(){
 
@@ -239,13 +202,4 @@ void String::dmCadenaPrint(){
  return es;
  }
 
-int String :: stringPorNumero(){
-   /* int i;
-    int a = 0;
-    for(i = 1; i < this->strlar(); i++)
-    {
-        a += atoi(this->cadena[i]);
-    }
-    */
-    return 0;
- }
+

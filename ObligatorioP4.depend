@@ -155,7 +155,7 @@
 1543618055 c:\users\rperera\documents\github\obligatorio-p4\hechizo.h
 	"String.h"
 
-1543702911 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
+1543703666 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
 	"Fecha.h"
 
 1543702834 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
@@ -168,10 +168,11 @@
 1543697694 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
 	"HechizosBruja.h"
 
-1543615659 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
+1543706529 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
 	<stdio.h>
 	<conio.h>
 	"Utiles.h"
+	<clocale>
 
 1543265562 c:\users\rperera\documents\github\obligatorio-p4\menu.h
 	"String.h"
@@ -229,10 +230,10 @@
 1543586931 c:\users\rperera\documents\github\obligatorio-p4\especial.h
 	"Hechizo.h"
 
-1543616457 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
+1543704205 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
 	"Fachada.h"
 
-1543604289 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
+1543704215 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
 	"Brujas.h"
 	"Suprema.h"
 	"Comun.h"

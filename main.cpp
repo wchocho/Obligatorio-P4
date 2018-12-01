@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <conio.h>
 #include "Utiles.h"
+#include <clocale>
 
 int main(){
+    // agregado para tener letra ñ y tildes
+    setlocale(LC_CTYPE,"Spanish");
     int op = 0;
     Utiles utiles;
 
 
     do{
         utiles.imprimirMenu();
-        cout << "Ingrese una opcion: ";
+        cout << "Ingrese una opción: ";
         cin >> op;
         switch(op){
             case 1:

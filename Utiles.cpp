@@ -379,8 +379,17 @@ void Utiles :: registrarHechizo()
     {
         Bruja * bru = fachada.ObtenerBruja(identificador);
         int opcion;
-        cout<< "Indique que tipo de hechizo desea ingresar - ( (0) Comun (1) Especial ) :";
+        cout<< "Indique que tipo de hechizo desea ingresar - ( (1) Comun (2) Especial ) :";
         cin >> opcion;
+        while (!(opcion == 1 || opcion == 2)){
+            cout << "Opcion incorrecta !!!" << endl;
+            cout << "Indique que tipo de hechizo desea ingresar - ( (1) Comun (2) Especial ) :" << endl;
+
+            cin.clear(); // saca failbit
+            cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+            cin >> opcion;
+
+        }
 
         if (opcion == 0)
         {

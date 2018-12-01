@@ -12,7 +12,7 @@ bool Brujas :: member (String id){
         if(abbAux->info->getIdentificador() == id){
             exito = true;
         }else{
-            if(abbAux->info->getIdentificador() < id){
+            if(id < abbAux->info->getIdentificador()){
                 abbAux = abbAux->hizq;
             }else{
                 abbAux = abbAux->hder;
@@ -33,7 +33,9 @@ void Brujas :: InsertEnArbol (Bruja* bruja, Nodo* &abb){
         abb->hizq = NULL;
         abb->hder= NULL;
     }else{
-        if (bruja->getIdentificador() < abb->info->getIdentificador() ){
+        //bruja->getIdentificador().print();
+        //abb->info->getIdentificador().print();
+        if (bruja->getIdentificador()  <  abb->info->getIdentificador() ){
             InsertEnArbol(bruja, abb->hizq);
         }else{
             InsertEnArbol(bruja, abb->hder);
@@ -41,11 +43,7 @@ void Brujas :: InsertEnArbol (Bruja* bruja, Nodo* &abb){
     }
 }
 
-Iterador Brujas::listarBruja (){
-    Iterador iterador;
-    listarBrujaRec(abb, iterador);
-    return iterador;
-}
+
 
 Iterador Brujas::darSupremas(){
     Iterador iterador;
@@ -69,21 +67,15 @@ void Brujas :: darSupremasRec(Nodo * abbAux, Iterador& iterador){
 }
 
 
-/*
-void Brujas :: mostrarArbolOrdenado(Nodo* abbAux){
-    if(abbAux != NULL){
-        mostrarArbolOrdenado(abbAux->hizq);
-        abbAux->info->getIdentificador().print();
-        mostrarArbolOrdenado(abbAux->hder);
-    }
-
+Iterador Brujas::listarBruja (){
+    Iterador iterador;
+    listarBrujaRec(abb, iterador);
+    return iterador;
 }
 
 
-*/
-
-
 void Brujas::listarBrujaRec (Nodo* abbAux, Iterador& iterador){
+
     if (abbAux != NULL){
         listarBrujaRec (abbAux->hizq, iterador);
         iterador.insertarBruja(abbAux->info);
@@ -94,7 +86,7 @@ void Brujas::listarBrujaRec (Nodo* abbAux, Iterador& iterador){
 Bruja * Brujas :: Find (String id){
     Nodo* abbAux = abb;
     while(!(abbAux->info->getIdentificador() == id)){
-        if(abbAux->info->getIdentificador() < id){
+        if(id < abbAux->info->getIdentificador()){
             abbAux = abbAux->hizq;
         }else{
             abbAux = abbAux->hder;

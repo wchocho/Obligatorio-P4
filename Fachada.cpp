@@ -4,8 +4,7 @@ Fachada::Fachada(){
     Brujas brujas;
 }
 
-void Fachada :: RegistrarBruja(Bruja* bruja, int &error){
-    error = 0;
+void Fachada :: RegistrarBruja(Bruja* bruja){
     brujas.Insert(bruja);
 }
 

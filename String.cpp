@@ -1,4 +1,5 @@
 #include "String.h"
+#include <cstdlib>
 
 String::String()
 {
@@ -77,18 +78,35 @@ int String::_strlar(string s){
     return i;
 }
 
-bool String::operator<(String s){
-    int i = 0;
-    bool esMenor = true;
-    while(cadena[i]!='\0' && s.cadena[i]!='\0' && esMenor){
-        if(cadena[i] > s.cadena[i]){
-            esMenor = false;
-        }
-        i++;
-    }
-    return esMenor;
-}
+//bool String::operator<(String s){
+//    int i = 0;
+//    bool esMenor = false;
+//    while((cadena[i]!='\0' && s.cadena[i]!='\0') && !esMenor){
+//        if(cadena[i] > s.cadena[i]  ){
+//            esMenor = true;
+//        }
+//        i++;
+//    }
+//    return esMenor;
+//}
 
+
+bool String :: operator<(String s){
+int i =0;
+bool encontre = false;
+bool menor=false;
+while ((!encontre) && (cadena[i] !='\0') && (s.cadena[i] !='\0')){
+
+    if (cadena[i] != s.cadena[i])
+        encontre = true;
+    if (cadena[i]<s.cadena[i])
+        menor = true;
+    i++;
+}
+if ((!encontre) && (s.cadena[i] != '\0'))
+    menor = true;
+return menor;
+}
 bool String::operator==(String s){
     int i = 0;
     bool sonIguales = true;
@@ -206,3 +224,28 @@ void String::strinv(String &s1, String s2){
 void String::dmCadenaPrint(){
     cout << "dm cadena: " << &cadena;
 }
+
+ bool String :: esNumerica(){
+
+ int i =0;
+ bool es = true;
+ while (this->cadena[i] != '\0' && es){
+
+    if (this->cadena[i]<48 || this->cadena[i]>57)
+        es = false;
+    i++;
+
+ }
+ return es;
+ }
+
+int String :: stringPorNumero(){
+   /* int i;
+    int a = 0;
+    for(i = 1; i < this->strlar(); i++)
+    {
+        a += atoi(this->cadena[i]);
+    }
+    */
+    return 0;
+ }

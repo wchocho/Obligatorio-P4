@@ -14,7 +14,7 @@ class Fachada
 
     public:
         Fachada();
-        void RegistrarBruja(Bruja*, int&);
+        void RegistrarBruja(Bruja*);
 
         bool ExisteBruja(String);
         Bruja * ObtenerBruja(String);

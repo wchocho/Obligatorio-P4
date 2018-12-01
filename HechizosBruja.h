@@ -17,6 +17,7 @@ class HechizosBruja{
         int getTope();
         void cantidadHechizosPorTipo(int &, int&);
         Hechizo* getHechizo(int);
+        bool existeHechizoPorId(int);
 
 
  };

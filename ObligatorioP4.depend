@@ -145,26 +145,27 @@
 	"String.h"
 	"HechizosBruja.h"
 
-1543523661 c:\users\rperera\documents\github\obligatorio-p4\string.h
+1543701570 c:\users\rperera\documents\github\obligatorio-p4\string.h
 	<iostream>
 	<stdio.h>
 
-1543615689 c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.h
+1543696327 c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.h
 	"Hechizo.h"
 
 1543618055 c:\users\rperera\documents\github\obligatorio-p4\hechizo.h
 	"String.h"
 
-1543604289 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
+1543702911 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
 	"Fecha.h"
 
-1543444338 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
+1543702834 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
 	<iostream>
+	<limits>
 
 1543617765 source:c:\users\rperera\documents\github\obligatorio-p4\hechizo.cpp
 	"Hechizo.h"
 
-1543671676 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
+1543697694 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
 	"HechizosBruja.h"
 
 1543615659 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
@@ -190,8 +191,9 @@
 	"String.h"
 	<stdio.h>
 
-1543523661 source:c:\users\rperera\documents\github\obligatorio-p4\string.cpp
+1543702081 source:c:\users\rperera\documents\github\obligatorio-p4\string.cpp
 	"String.h"
+	<cstdlib>
 
 1543618338 source:c:\users\rperera\documents\github\obligatorio-p4\suprema.cpp
 	"Suprema.h"
@@ -200,21 +202,22 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543671154 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
+1543702457 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<limits>
+	<cstdlib>
 
 1543616765 source:c:\users\rperera\documents\github\obligatorio-p4\bruja.cpp
 	"Bruja.h"
 
-1543615773 source:c:\users\rperera\documents\github\obligatorio-p4\brujas.cpp
+1543698499 source:c:\users\rperera\documents\github\obligatorio-p4\brujas.cpp
 	"Brujas.h"
 	<stdio.h>
 
-1543615409 c:\users\rperera\documents\github\obligatorio-p4\brujas.h
+1543697892 c:\users\rperera\documents\github\obligatorio-p4\brujas.h
 	"Bruja.h"
 	"Suprema.h"
 	"Iterador.h"

@@ -27,8 +27,7 @@ class Brujas{
         void mayorSuprema(String & , Fecha , Brujas abb );
         void InsertEnArbol (Bruja *, Nodo * &);
         void listarBrujaRec (Nodo* , Iterador & );
-        /*void mostrarArbolOrdenado(Nodo *);*/
-void darSupremasRec(Nodo*, Iterador &);
+        void darSupremasRec(Nodo*, Iterador &);
 
 
         //Bruja * ObtenerDelArbol (Nodo *, String);

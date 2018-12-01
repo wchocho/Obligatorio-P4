@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <limits>
+#include <cstdlib>
 Utiles::Utiles():fachada()
 {
 }
@@ -39,7 +40,7 @@ void Utiles::registrarNuevaBruja()
 
     if (existe)
     {
-        cout << "Error: ya existe una bruja registrada con el identificador";
+        cout << "Error: ya existe una bruja registrada con el identificador ingresado";
     }
     else
     {
@@ -70,7 +71,20 @@ void Utiles::registrarNuevaBruja()
             case 1:  //suprema
             {
                 Fecha fecha_nacimiento;
-                int cant_poderes = 0;
+                String cant_poderes_str;
+
+                cout << "Ingrese la cantidad de poderes: " << endl;
+                cant_poderes_str.scan();
+                while (!cant_poderes_str.esNumerica()){
+
+                    cout << "Ingrese la cantidad de poderes: " << endl;
+                    cant_poderes_str.scan();
+
+                }
+
+                int cant_poderes;
+                cant_poderes = atoi(cant_poderes_str.getCadena());
+
                 cout << "Ingrese la fecha de nacimiento" << endl;
                 fecha_nacimiento.scan();
                 if (!fecha_nacimiento.esValida())
@@ -80,11 +94,9 @@ void Utiles::registrarNuevaBruja()
                 else
                 {
                     bruja = new Suprema(identificador, nombre, hechizos, fecha_nacimiento, cant_poderes);
-                    fachada.RegistrarBruja(bruja, error);
-                    if (!error)
-                    {
-                        cout << "Bruja suprema registrada" << endl;
-                    }
+                    fachada.RegistrarBruja(bruja);
+                    cout << "Bruja suprema registrada" << endl;
+
                 }
                 break;
             }
@@ -218,7 +230,7 @@ void Utiles::listadoBrujas ()
     }
     else
     {
-        cout << "ERROR: no hay brujas ingresadas en el sistema";
+        cout << "ERROR: no hay brujas ingresadas en el sistema.";
     }
 }
 
@@ -277,24 +289,41 @@ void Utiles :: listadoDetalleBrujaHechizos(){
         Bruja * bruja_aux = NULL;
         bruja_aux = fachada.ObtenerBruja(identificador);
         cout << "Ingrese el numero de hechizo que desea ver en detalle: ";
+
         cin >> numhechizo;
-        Hechizo * h( bruja_aux->getHechizos().getHechizo(numhechizo));
-        if (h->getTipoHechizo()==0){
-
-            cout << "Numero: " << h->getNumero();
-            cout << endl;
-            cout << "Nombre: ";
-            h->getNombre().print();
+        while (numhechizo<1 || numhechizo > CANT_HECHIZOS){
+            cout << "Error !!! El numero de hechizo debe estar entre 1 y " << CANT_HECHIZOS << endl;
+            cout << "Ingrese el numero de hechizo que desea ver en detalle: ";
+            cin.clear(); // saca failbit
+            cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+            cin >> numhechizo;
         }
-        else{
 
-            cout << "Numero: " << ((Especial *)h)->getNumero();
-            cout << endl;
-            cout << "Nombre: " ;
-            ((Especial *)h)->getNombre().print();
-            cout << endl;
-            cout << "Anio: " << ((Especial *)h)->getAnioManifiesto() ;
 
+        numhechizo--;
+
+        if(bruja_aux->getHechizos().existeHechizoPorId(numhechizo)){
+
+            Hechizo * h( bruja_aux->getHechizos().getHechizo(numhechizo));
+            if (h->getTipoHechizo()==0){
+
+                cout << "Numero: " << h->getNumero() + 1;
+                cout << endl;
+                cout << "Nombre: ";
+                h->getNombre().print();
+            }
+            else{
+
+                cout << "Numero: " << ((Especial *)h)->getNumero() +1;
+                cout << endl;
+                cout << "Nombre: " ;
+                ((Especial *)h)->getNombre().print();
+                cout << endl;
+                cout << "Anio: " << ((Especial *)h)->getAnioManifiesto() ;
+
+            }
+        }else{
+            cout << "Error: El hechizo que intenta obtener no existe.";
         }
     }
 
@@ -413,11 +442,18 @@ void Utiles :: registrarHechizo()
                 nom.scan();
                 cout << "Ingrese la descripcion del hechizo: ";
                 des.scan();
-
-
                 int numero = bru->getHechizos().getTope();
-                cout << "Ingrese el año de manifiesto: ";
-                cin >> year;
+
+                String anio_str;
+                cout << "Ingrese el año de manifiesto: " << endl;
+                anio_str.scan();
+                while (!anio_str.esNumerica()){
+
+                    cout << "Ingrese el año de manifiesto: " << endl;
+                    anio_str.scan();
+
+                }
+                year = atoi(anio_str.getCadena());
 
                 Especial * he = new Especial(numero,nom, year, des);
 

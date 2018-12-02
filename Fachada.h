@@ -2,18 +2,15 @@
 #define FACHADA_H_INCLUDED
 
 #include <cstdlib>
-#include "Fecha.h"
-#include "Bruja.h"
-#include "Suprema.h"
-#include "Comun.h"
-#include "Especial.h"
-#include "Brujas.h"
-#include "Suprema.h"
-#include "Comun.h"
-#include "Hechizo.h"
 #include <stdio.h>
 #include <conio.h>
 #include <clocale>
+
+#include "Brujas.h"
+#include "Especial.h"
+#include "Comun.h"
+
+
 
 class Fachada
 {

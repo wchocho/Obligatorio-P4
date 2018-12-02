@@ -3,7 +3,7 @@
 #include "Bruja.h"
 #include "Suprema.h"
 #include "Iterador.h"
-#include "Fecha.h"
+
 
 
 class Brujas{
@@ -30,7 +30,7 @@ class Brujas{
         Iterador listarBruja ();
         Iterador darSupremas();
 
-        //Bruja * ObtenerDelArbol (Nodo *, String);
+
 };
 
 #endif // BRUJAS_H_INCLUDED

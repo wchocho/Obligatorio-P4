@@ -1,9 +1,9 @@
 #ifndef COMUN_H_INCLUDED
 #define COMUN_H_INCLUDED
-#
+
 #include "Bruja.h"
 #include "Suprema.h"
-#include "String.h"
+
 
 class Comun: public Bruja{
     private:

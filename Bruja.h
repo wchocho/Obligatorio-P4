@@ -1,7 +1,6 @@
 #ifndef BRUJA_H_INCLUDED
 #define BRUJA_H_INCLUDED
 
-#include "String.h"
 #include "HechizosBruja.h"
 
 class Bruja{

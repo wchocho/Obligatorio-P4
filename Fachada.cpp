@@ -35,5 +35,9 @@ Iterador Fachada::listarBruja(){
     bru->insertarHechizos(he);
 }
 
+void Fachada :: cantidadHechizosPorTipo(Bruja * bruja, int &comunes, int&especiales){
+    bruja->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+}
+
 
 

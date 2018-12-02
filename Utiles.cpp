@@ -484,7 +484,12 @@ cout << "Ingrese el identificador de la bruja: ";
         Bruja * bru = fachada.ObtenerBruja(identificador);
         int comunes =0;
         int especiales=0;
-        bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+        // ESTA ES LA NUEVA
+        fachada.cantidadHechizosPorTipo(bru, comunes, especiales);
+        // LA QUE HABIA
+        //bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+
+
         cout << "Hechizos Comunes: " << comunes << endl;
         cout << "Hechizos Especiales: " << especiales << endl;
 

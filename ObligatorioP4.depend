@@ -152,10 +152,10 @@
 1543696327 c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.h
 	"Hechizo.h"
 
-1543618055 c:\users\rperera\documents\github\obligatorio-p4\hechizo.h
+1543758360 c:\users\rperera\documents\github\obligatorio-p4\hechizo.h
 	"String.h"
 
-1543703666 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
+1543707134 source:c:\users\rperera\documents\github\obligatorio-p4\fecha.cpp
 	"Fecha.h"
 
 1543707130 c:\users\rperera\documents\github\obligatorio-p4\fecha.h
@@ -168,7 +168,7 @@
 1543697694 source:c:\users\rperera\documents\github\obligatorio-p4\hechizosbruja.cpp
 	"HechizosBruja.h"
 
-1543706529 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
+1543706850 source:c:\users\rperera\documents\github\obligatorio-p4\main.cpp
 	<stdio.h>
 	<conio.h>
 	"Utiles.h"
@@ -192,7 +192,7 @@
 	"String.h"
 	<stdio.h>
 
-1543702081 source:c:\users\rperera\documents\github\obligatorio-p4\string.cpp
+1543707079 source:c:\users\rperera\documents\github\obligatorio-p4\string.cpp
 	"String.h"
 	<cstdlib>
 
@@ -203,7 +203,7 @@
 	"Bruja.h"
 	"Fecha.h"
 
-1543702457 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
+1543759192 source:c:\users\rperera\documents\github\obligatorio-p4\utiles.cpp
 	"Utiles.h"
 	<stdio.h>
 	<stdlib.h>
@@ -218,7 +218,7 @@
 	"Brujas.h"
 	<stdio.h>
 
-1543697892 c:\users\rperera\documents\github\obligatorio-p4\brujas.h
+1543756944 c:\users\rperera\documents\github\obligatorio-p4\brujas.h
 	"Bruja.h"
 	"Suprema.h"
 	"Iterador.h"
@@ -230,10 +230,10 @@
 1543586931 c:\users\rperera\documents\github\obligatorio-p4\especial.h
 	"Hechizo.h"
 
-1543704205 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
+1543759232 source:c:\users\rperera\documents\github\obligatorio-p4\fachada.cpp
 	"Fachada.h"
 
-1543704215 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
+1543759183 c:\users\rperera\documents\github\obligatorio-p4\fachada.h
 	"Brujas.h"
 	"Suprema.h"
 	"Comun.h"
@@ -265,7 +265,7 @@
 	<stdio.h>
 	"Bruja.h"
 
-1543604289 c:\users\rperera\documents\github\obligatorio-p4\iterador.h
+1543758992 c:\users\rperera\documents\github\obligatorio-p4\iterador.h
 	<stdio.h>
 	"Bruja.h"
 

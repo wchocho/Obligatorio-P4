@@ -22,6 +22,7 @@ class Fachada
         void registrarHechizo(String  , Hechizo *);
         void listadoDetalleBrujaMasAntigua(Brujas);
         Iterador getSupremas();
+        void cantidadHechizosPorTipo(Bruja *, int &, int&);
 };
 
 #endif // FACHADA_H_INCLUDED

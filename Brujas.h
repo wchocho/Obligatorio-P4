@@ -8,14 +8,6 @@
 
 class Brujas{
 
-    public:
-        Brujas ();
-        bool member (String);
-        void Insert (Bruja *);
-        Bruja * Find (String);
-
-        Iterador listarBruja ();
-        Iterador darSupremas();
     private:
         struct Nodo {
             Bruja * info;
@@ -29,6 +21,14 @@ class Brujas{
         void listarBrujaRec (Nodo* , Iterador & );
         void darSupremasRec(Nodo*, Iterador &);
 
+     public:
+        Brujas ();
+        bool member (String);
+        void Insert (Bruja *);
+        Bruja * Find (String);
+
+        Iterador listarBruja ();
+        Iterador darSupremas();
 
         //Bruja * ObtenerDelArbol (Nodo *, String);
 };

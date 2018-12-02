@@ -8,7 +8,6 @@ class Hechizo{
     public:
         Hechizo();
         Hechizo(int, String);
-        Hechizo(const Hechizo &);
         int getNumero();
         String getNombre();
         virtual int getTipoHechizo();

@@ -8,28 +8,28 @@
 
 class Iterador {
         private:
-        struct Nodo{
-            Bruja* info;
-            Nodo* sig;
-        };
+            struct Nodo{
+                Bruja* info;
+                Nodo* sig;
+            };
 
-        struct LPPF{
-            Nodo* prim;
-            Nodo* ult;
+            struct LPPF{
+                Nodo* prim;
+                Nodo* ult;
+                Nodo* actual;
+            };
+
+            LPPF lppf;
             Nodo* actual;
-        };
-
-        LPPF lppf;
-        Nodo* actual;
 
         public:
-        Iterador();
-        ~Iterador();
+            Iterador();
+            ~Iterador();
 
-        void insertarBruja (Bruja*);
-        Bruja* proximaBruja ();
-        bool hayMasBrujas ();
-        Bruja* actualBruja ();
+            void insertarBruja (Bruja*);
+            Bruja* proximaBruja ();
+            bool hayMasBrujas ();
+            Bruja* actualBruja ();
 
     protected:
 

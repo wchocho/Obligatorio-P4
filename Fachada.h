@@ -18,13 +18,12 @@ class Fachada
 private:
 
     Brujas brujas;
-
-public:
-   Fachada();
-    void menuInicio();
-
-
-
+    void imprimirMenu ();
+    bool preguntoReintentar (string);
+    void imprimirDatosBasicosBruja(Bruja *);
+    void imprimirDatosSuprema(Suprema *);
+    void imprimirDatosComun(Comun *);
+    String boolAString(bool);
     bool ExisteBruja(String);
     Bruja * ObtenerBruja(String);
     Iterador listarBruja();
@@ -32,34 +31,18 @@ public:
     void listadoDetalleBrujaMasAntigua(Brujas);
     Iterador getSupremas();
 
-
+public:
+    Fachada();
+    void menuInicio();
     //menu
-     void registrarBruja();
-
-
-    //impresiones
-    void imprimirMenu ();
-    void listadoBrujas();
+    void registrarBruja();
     void registrarHechizo();
-    //void cantidadHechizosPorBruja();
-    void listadoDetallePorBruja();
-    //void listadoDetalleBrujaMasAntigua();
-    void listadoDetalleBrujaHechizos();
-
-
-    // auxiliares
-    bool preguntoReintentar (string);
-    void imprimirDatosBasicosBruja(Bruja *);
-    void imprimirDatosSuprema(Suprema *);
-    void imprimirDatosComun(Comun *);
-    String boolAString(bool);
     void cantidadHechizosPorTipo();
-    void listadoDetalleBrujaMasAntigua();
+    void listadoBrujas();
+    void listadoDetallePorBruja();
+    void listadoDetalleBrujaHechizos();
     void mayorSuprema();
-
-
-
-
+    void listadoDetalleBrujaMasAntigua();
 
 };
 

@@ -19,10 +19,10 @@ void Fachada :: menuInicio(){
                 registrarBruja();
                 break;
 
-            case 2 :{
+            case 2 :
                 registrarHechizo();
                 break;
-            }
+
 
             case 3:{
                 cantidadHechizosPorTipo();
@@ -132,6 +132,7 @@ void Fachada :: menuInicio(){
                 }
                 else
                 {
+
                     bruja = new Suprema(identificador, nombre, hechizos, fecha_nacimiento, cant_poderes);
                     brujas.Insert(bruja);
                     cout << "Bruja suprema registrada." << endl;
@@ -258,6 +259,7 @@ void Fachada :: registrarHechizo()
                 nom.scan();
                 cout << "Ingrese la descripción del hechizo: ";
                 des.scan();
+
                 int numero = bru->getHechizos().getTope();
 
                 String anio_str;
@@ -272,7 +274,7 @@ void Fachada :: registrarHechizo()
                 year = atoi(anio_str.getCadena());
 
                 Especial * he = new Especial(numero,nom, year, des);
-                    bru->insertarHechizos(he);
+                bru->insertarHechizos(he);
 
 
             }
@@ -375,8 +377,6 @@ void Fachada :: listadoDetallePorBruja()
 
 // Caso 6
 // MAYOR SUPREMA
-
-
 void Fachada :: mayorSuprema(){
     system("CLS");
     cout << " ** INFORMACIÓN DE LA MAYO BRUJA REGISTRADA ** " << endl << endl;
@@ -423,44 +423,49 @@ void Fachada :: listadoDetalleBrujaHechizos(){
     }
     else
     {
+
         Bruja * bruja_aux = NULL;
         bruja_aux = ObtenerBruja(identificador);
-        cout << "Ingrese el numero de hechizo que desea ver en detalle: ";
-
-        cin >> numhechizo;
-        while (numhechizo<1 || numhechizo > CANT_HECHIZOS){
-            cout << "Error !!! El numero de hechizo debe estar entre 1 y " << CANT_HECHIZOS << endl;
+        if( !bruja_aux->getHechizos().esvacia() ){
             cout << "Ingrese el numero de hechizo que desea ver en detalle: ";
-            cin.clear(); // saca failbit
-            cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+
             cin >> numhechizo;
-        }
-
-
-        numhechizo--;
-
-        if(bruja_aux->getHechizos().existeHechizoPorId(numhechizo)){
-
-            Hechizo * h( bruja_aux->getHechizos().getHechizo(numhechizo));
-            if (h->getTipoHechizo()==0){
-
-                cout << "Numero: " << h->getNumero() + 1;
-                cout << endl;
-                cout << "Nombre: ";
-                h->getNombre().print();
+            while (numhechizo<1 || numhechizo > CANT_HECHIZOS){
+                cout << "Error !!! El numero de hechizo debe estar entre 1 y " << CANT_HECHIZOS << endl;
+                cout << "Ingrese el numero de hechizo que desea ver en detalle: ";
+                cin.clear(); // saca failbit
+                cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+                cin >> numhechizo;
             }
-            else{
 
-                cout << "Numero: " << ((Especial *)h)->getNumero() +1;
-                cout << endl;
-                cout << "Nombre: " ;
-                ((Especial *)h)->getNombre().print();
-                cout << endl;
-                cout << "Anio: " << ((Especial *)h)->getAnioManifiesto() ;
 
+            numhechizo--;
+
+            if(bruja_aux->getHechizos().existeHechizoPorId(numhechizo)){
+
+                Hechizo * h( bruja_aux->getHechizos().getHechizo(numhechizo));
+                if (h->getTipoHechizo()==0){
+
+                    cout << "Numero: " << h->getNumero() + 1;
+                    cout << endl;
+                    cout << "Nombre: ";
+                    h->getNombre().print();
+                }
+                else{
+
+                    cout << "Numero: " << ((Especial *)h)->getNumero() +1;
+                    cout << endl;
+                    cout << "Nombre: " ;
+                    ((Especial *)h)->getNombre().print();
+                    cout << endl;
+                    cout << "Anio: " << ((Especial *)h)->getAnioManifiesto() ;
+
+                }
+            }else{
+                cout << "Error: El numero ingresado no corresponde a un hechizo registrado.";
             }
         }else{
-            cout << "Error: El numero ingresado no corresponde a un hechizo registrado.";
+            cout << "Error: La bruja seleccionada no tiene hechizos cargados.";
         }
     }
 
@@ -501,11 +506,11 @@ void Fachada::imprimirMenu()
     system("CLS");
     cout << " 1 - Registrar bruja " << endl;
     cout << " 2 - Regsitrar hechizo " << endl;
-    cout << " 3 - Cantidad de hechizos por bruja - " << endl;
-    cout << " 4 - Listado de brujas alfabetico - "  << endl;
-    cout << " 5 - Listado de detalle por bruja - " << endl;
-    cout << " 6 - Listado de detalle de mayor bruja suprema - " << endl;
-    cout << " 7 - Listado de detalle por bruja y hechizo - " << endl;
+    cout << " 3 - Cantidad de hechizos por bruja " << endl;
+    cout << " 4 - Listado de brujas alfabetico "  << endl;
+    cout << " 5 - Listado de detalle por bruja " << endl;
+    cout << " 6 - Listado de detalle de mayor bruja suprema " << endl;
+    cout << " 7 - Listado de detalle por bruja y hechizo " << endl;
     cout << " 8 - Salir" << endl << endl;
 
 

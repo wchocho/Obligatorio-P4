@@ -4,60 +4,65 @@ Fachada::Fachada(){
     Brujas brujas;
 }
 
-void Fachada :: RegistrarBruja(Bruja* bruja){
-    brujas.Insert(bruja);
+void Fachada :: menuInicio(){
+ // agregado para tener letra ñ y tildes
+    setlocale(LC_CTYPE,"Spanish");
+    int op = 0;
+
+
+    do{
+        imprimirMenu();
+        cout << "Ingrese una opción: ";
+        cin >> op;
+        switch(op){
+            case 1:
+                registrarBruja();
+                break;
+
+            case 2 :{
+                registrarHechizo();
+                break;
+            }
+
+            case 3:{
+                cantidadHechizosPorTipo();
+                break;
+
+            }
+            case 4:{
+                listadoBrujas();
+                break;
+
+            }
+            case 5:{
+                listadoDetallePorBruja();
+                break;
+            }
+            case 6:{
+                mayorSuprema();
+                break;
+            }
+            case 7:{
+              listadoDetalleBrujaHechizos();
+                break;
+            }
+
+        }
+        if (op != 8){
+            cin.ignore();
+            getch();
+
+        }
+    }while(op != 8);
+
+
 }
 
-bool Fachada :: ExisteBruja(String id){
-    return brujas.member(id);
-}
 
-Iterador Fachada :: getSupremas(){
-
-return brujas.darSupremas();
-
-
-
-}
-
-Bruja * Fachada :: ObtenerBruja(String id){
-    Bruja * bruja = NULL;
-    bruja = brujas.Find(id);
-    return bruja;
-}
-
-Iterador Fachada::listarBruja(){
-    return brujas.listarBruja();
-}
-
- void Fachada :: registrarHechizo(String id , Hechizo * he){
-    Bruja * bru = ObtenerBruja(id);
-    bru->insertarHechizos(he);
-}
-
-void Fachada :: cantidadHechizosPorTipo(Bruja * bruja, int &comunes, int&especiales){
-    bruja->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
-}
-
-
-
-
-void Fachada::imprimirMenu()
-{
-    system("CLS");
-    cout << " 1 - Registrar nueva bruja - Requerimientos 1 y 2" << endl;
-    cout << " 2 - Regsitrar hechizo - Requerimiento 6" << endl;
-    cout << " 3 - Cantidad de hechizos por bruja - Requerimiento 8" << endl;
-    cout << " 4 - Listado de brujas alfabetico - Requerimiento 3" << endl;
-    cout << " 5 - Listado de detalle por bruja - Requerimiento 4" << endl;
-    cout << " 6 - Listado de detalle de mayor bruja suprema Requerimiento 5 " << endl;
-    cout << " 7 - Listado de detalle por bruja y hechizo" << endl;
-    cout << " 8 - Salir" << endl << endl;
-
-
-}
-
-void Fachada::registrarNuevaBruja()
+// MENU
+// Caso 1
+// REGISTRAR NUEVA BRUJA
+ void Fachada::registrarBruja()
 {
     bool existe = false;
     Bruja * bruja = NULL;
@@ -128,7 +133,7 @@ void Fachada::registrarNuevaBruja()
                 else
                 {
                     bruja = new Suprema(identificador, nombre, hechizos, fecha_nacimiento, cant_poderes);
-                    RegistrarBruja(bruja);
+                    brujas.Insert(bruja);
                     cout << "Bruja suprema registrada." << endl;
 
                 }
@@ -170,7 +175,7 @@ void Fachada::registrarNuevaBruja()
                     {
 
                         bruja = new Comun(identificador, nombre, hechizos, region_origen, vuela_escoba, (Suprema*)suprema_aux);
-                        RegistrarBruja(bruja);
+                        brujas.Insert(bruja);
                         cout << "Bruja comun registrada." << endl;
 
                     }
@@ -198,53 +203,117 @@ void Fachada::registrarNuevaBruja()
 
 }
 
+// Caso 2
+// REGISTRAR HECHIZO
 
-
-bool Fachada::preguntoReintentar (string msg)
+void Fachada :: registrarHechizo()
 {
-    char reintentar;
-
-    do
-    {
-        cout << endl << msg << endl;
-        cout << "Desea intentarlo nuevamente? (s, n)?: ";
-        cin.ignore();
-        reintentar = getchar();
-
-    }
-    while (reintentar != 's' && reintentar != 'n');
-
-    return reintentar == 's';
-}
-
-
-void Fachada :: mayorSuprema(){
     system("CLS");
-    cout << " ** INFORMACIÓN DE LA MAYO BRUJA REGISTRADA ** " << endl << endl;
-    Iterador itera = getSupremas();
-    Suprema * su = NULL;
-    if (itera.hayMasBrujas()){
-        su = (Suprema *)itera.proximaBruja();
-        Suprema * actual = su;
-        while (itera.hayMasBrujas()){
+    cout << " ** REGISTRAR HECHIZO ** " << endl << endl;
+    cout << "Ingrese el identificador de la bruja: ";
+    String identificador;
+    identificador.scan();
+    bool existe = ExisteBruja(identificador);
 
-            actual=((Suprema *)itera.proximaBruja());
-            if (actual->getFechaNacimiento()<su->getFechaNacimiento())
-                su = actual;
+    if (!existe)
+    {
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
+    }
+    else
+    {
+        Bruja * bru = ObtenerBruja(identificador);
+        int opcion;
+        cout<< "Indique que tipo de hechizo desea ingresar - ( (1) Común (2) Especial ) :";
+        cin >> opcion;
 
+        if ( bru->getHechizos().getTope() < CANT_HECHIZOS){
+
+            while ( !(opcion == 1 || opcion == 2)){
+                cout << "Opcion incorrecta !!!" << endl;
+                cout << "Indique que tipo de hechizo desea ingresar - ( (1) Común (2) Especial ) :" << endl;
+
+                cin.clear(); // saca failbit
+                cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
+                cin >> opcion;
+
+            }
+
+            if (opcion == 1)
+            {
+                cout<< "Ingrese el nombre del hechizo: ";
+                String nom;
+                nom.scan();
+                int numero = bru->getHechizos().getTope();
+                Hechizo * he = new Hechizo(numero,nom);
+
+
+            bru->insertarHechizos(he);
+            }
+            else
+            {
+                String nom, des;
+                int year;
+
+                cout<< "Ingrese el nombre del hechizo: ";
+                nom.scan();
+                cout << "Ingrese la descripción del hechizo: ";
+                des.scan();
+                int numero = bru->getHechizos().getTope();
+
+                String anio_str;
+                cout << "Ingrese el año de manifiesto: " << endl;
+                anio_str.scan();
+                while (!anio_str.esNumerica()){
+
+                    cout << "Ingrese el año de manifiesto: " << endl;
+                    anio_str.scan();
+
+                }
+                year = atoi(anio_str.getCadena());
+
+                Especial * he = new Especial(numero,nom, year, des);
+                    bru->insertarHechizos(he);
+
+
+            }
+        }else{
+            cout << "Error: No es posible registrar otro hechizo para la bruja seleccionada ya que alcanzo su máximo." << endl;
         }
 
-
     }
-    // agregado para el caso donde se ingresa al requeriminto sin ingresar brujas previamente.
-    if(su != NULL){
-        imprimirDatosSuprema(su);
-    }else{
-        cout << "Error: No existen brujas cargadas en el sistema.";
-    }
-
-
 }
+
+// Caso 3
+// CANTIDAD DE HECHIZOS BRUJA POR TIPO
+
+void Fachada :: cantidadHechizosPorTipo(){
+cout << "Ingrese el identificador de la bruja: ";
+    String identificador;
+    identificador.scan();
+    bool existe = ExisteBruja(identificador);
+
+    if (!existe)
+    {
+        cout << "Error: El identificador ingresado no corresponde a una bruja registrada."; ;
+
+    }
+    else
+    {
+        Bruja * bru = ObtenerBruja(identificador);
+        int comunes =0;
+        int especiales=0;
+
+        bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
+
+        cout << "Hechizos Comunes: " << comunes << endl;
+        cout << "Hechizos Especiales: " << especiales << endl;
+
+
+
+}}
+
+// Caso 4
+// LISTADO BRUJAS ALFABETICO
 
 void Fachada::listadoBrujas ()
 {
@@ -267,6 +336,8 @@ void Fachada::listadoBrujas ()
     }
 }
 
+// Caso 5
+// LISTADO DETALLE POR BRUJA
 void Fachada :: listadoDetallePorBruja()
 {
     bool existe=false;
@@ -302,7 +373,40 @@ void Fachada :: listadoDetallePorBruja()
     }
 }
 
+// Caso 6
+// MAYOR SUPREMA
 
+
+void Fachada :: mayorSuprema(){
+    system("CLS");
+    cout << " ** INFORMACIÓN DE LA MAYO BRUJA REGISTRADA ** " << endl << endl;
+    Iterador itera = getSupremas();
+    Suprema * su = NULL;
+    if (itera.hayMasBrujas()){
+        su = (Suprema *)itera.proximaBruja();
+        Suprema * actual = su;
+        while (itera.hayMasBrujas()){
+
+            actual=((Suprema *)itera.proximaBruja());
+            if (actual->getFechaNacimiento()<su->getFechaNacimiento())
+                su = actual;
+
+        }
+
+
+    }
+    // agregado para el caso donde se ingresa al requeriminto sin ingresar brujas previamente.
+    if(su != NULL){
+        imprimirDatosSuprema(su);
+    }else{
+        cout << "Error: No existen brujas cargadas en el sistema.";
+    }
+
+
+}
+
+// Caso 7
+// LISTADO DETALLE BRUJA HECHIZOS
 void Fachada :: listadoDetalleBrujaHechizos(){
  bool existe=false;
     String identificador;
@@ -366,6 +470,83 @@ void Fachada :: listadoDetalleBrujaHechizos(){
 
 
 
+
+
+// AUXILIARES
+
+
+bool Fachada :: ExisteBruja(String id){
+    return brujas.member(id);
+}
+
+Iterador Fachada :: getSupremas(){
+
+return brujas.darSupremas();
+
+}
+
+Bruja * Fachada :: ObtenerBruja(String id){
+    Bruja * bruja = NULL;
+    bruja = brujas.Find(id);
+    return bruja;
+}
+
+
+Iterador Fachada::listarBruja(){
+    return brujas.listarBruja();
+}
+
+void Fachada::imprimirMenu()
+{
+    system("CLS");
+    cout << " 1 - Registrar bruja " << endl;
+    cout << " 2 - Regsitrar hechizo " << endl;
+    cout << " 3 - Cantidad de hechizos por bruja - " << endl;
+    cout << " 4 - Listado de brujas alfabetico - "  << endl;
+    cout << " 5 - Listado de detalle por bruja - " << endl;
+    cout << " 6 - Listado de detalle de mayor bruja suprema - " << endl;
+    cout << " 7 - Listado de detalle por bruja y hechizo - " << endl;
+    cout << " 8 - Salir" << endl << endl;
+
+
+}
+
+bool Fachada::preguntoReintentar (string msg)
+{
+    char reintentar;
+
+    do
+    {
+        cout << endl << msg << endl;
+        cout << "Desea intentarlo nuevamente? (s, n)?: ";
+        cin.ignore();
+        reintentar = getchar();
+
+    }
+    while (reintentar != 's' && reintentar != 'n');
+
+    return reintentar == 's';
+}
+
+String Fachada :: boolAString(bool aux)
+{
+    String resu;
+    if(aux)
+    {
+        resu = ("SI");
+    }
+    else
+    {
+        resu = ("NO");
+    }
+    return resu;
+}
+
+
+
+
+// IMPRESIONES
+
 void Fachada :: imprimirDatosBasicosBruja(Bruja* bruja)
 {
     cout << "Identificador: ";
@@ -412,174 +593,3 @@ void Fachada :: imprimirDatosComun(Comun* bruja_comun)
     cout << endl;
 }
 
-String Fachada :: boolAString(bool aux)
-{
-    String resu;
-    if(aux)
-    {
-        resu = ("SI");
-    }
-    else
-    {
-        resu = ("NO");
-    }
-    return resu;
-}
-
-void Fachada :: registrarHechizo()
-{
-    system("CLS");
-    cout << " ** REGISTRAR HECHIZO ** " << endl << endl;
-    cout << "Ingrese el identificador de la bruja: ";
-    String identificador;
-    identificador.scan();
-    bool existe = ExisteBruja(identificador);
-
-    if (!existe)
-    {
-        cout << "Error: El identificador ingresado no corresponde a una bruja registrada." << endl;
-    }
-    else
-    {
-        Bruja * bru = ObtenerBruja(identificador);
-        int opcion;
-        cout<< "Indique que tipo de hechizo desea ingresar - ( (1) Común (2) Especial ) :";
-        cin >> opcion;
-
-        if ( bru->getHechizos().getTope() < CANT_HECHIZOS){
-
-            while ( !(opcion == 1 || opcion == 2)){
-                cout << "Opcion incorrecta !!!" << endl;
-                cout << "Indique que tipo de hechizo desea ingresar - ( (1) Común (2) Especial ) :" << endl;
-
-                cin.clear(); // saca failbit
-                cin.ignore(numeric_limits<streamsize>::max(),'\n'); // descarta lo que esta mal ingresado
-                cin >> opcion;
-
-            }
-
-            if (opcion == 1)
-            {
-                cout<< "Ingrese el nombre del hechizo: ";
-                String nom;
-                nom.scan();
-                int numero = bru->getHechizos().getTope();
-                Hechizo * he = new Hechizo(numero,nom);
-
-                registrarHechizo(identificador, he);
-            }
-            else
-            {
-                String nom, des;
-                int year;
-
-                cout<< "Ingrese el nombre del hechizo: ";
-                nom.scan();
-                cout << "Ingrese la descripción del hechizo: ";
-                des.scan();
-                int numero = bru->getHechizos().getTope();
-
-                String anio_str;
-                cout << "Ingrese el año de manifiesto: " << endl;
-                anio_str.scan();
-                while (!anio_str.esNumerica()){
-
-                    cout << "Ingrese el año de manifiesto: " << endl;
-                    anio_str.scan();
-
-                }
-                year = atoi(anio_str.getCadena());
-
-                Especial * he = new Especial(numero,nom, year, des);
-
-                registrarHechizo(identificador, he);
-
-            }
-        }else{
-            cout << "Error: No es posible registrar otro hechizo para la bruja seleccionada ya que alcanzo su máximo." << endl;
-        }
-
-    }
-}
-
-void Fachada :: cantidadHechizosPorTipo(){
-cout << "Ingrese el identificador de la bruja: ";
-    String identificador;
-    identificador.scan();
-    bool existe = ExisteBruja(identificador);
-
-    if (!existe)
-    {
-        cout << "Error: El identificador ingresado no corresponde a una bruja registrada."; ;
-
-    }
-    else
-    {
-        Bruja * bru = ObtenerBruja(identificador);
-        int comunes =0;
-        int especiales=0;
-        // ESTA ES LA NUEVA
-        cantidadHechizosPorTipo(bru, comunes, especiales);
-        // LA QUE HABIA
-        //bru->getHechizos().cantidadHechizosPorTipo(comunes,especiales);
-
-
-        cout << "Hechizos Comunes: " << comunes << endl;
-        cout << "Hechizos Especiales: " << especiales << endl;
-
-
-
-}}
-void Fachada :: menuInicio(){
- // agregado para tener letra ñ y tildes
-    setlocale(LC_CTYPE,"Spanish");
-    int op = 0;
-
-
-    do{
-        imprimirMenu();
-        cout << "Ingrese una opción: ";
-        cin >> op;
-        switch(op){
-            case 1:
-                registrarNuevaBruja();
-                break;
-
-            case 2 :{
-                registrarHechizo();
-                break;
-            }
-
-            case 3:{
-                cantidadHechizosPorTipo();
-                break;
-
-            }
-            case 4:{
-                listadoBrujas();
-                break;
-
-            }
-            case 5:{
-                listadoDetallePorBruja();
-                break;
-            }
-            case 6:{
-                mayorSuprema();
-                break;
-            }
-            case 7:{
-              listadoDetalleBrujaHechizos();
-                break;
-            }
-
-        }
-        if (op != 8){
-            cin.ignore();
-            getch();
-
-        }
-    }while(op != 8);
-
-
-}

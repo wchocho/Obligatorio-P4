@@ -56,8 +56,6 @@
 		<Unit filename="String.h" />
 		<Unit filename="Suprema.cpp" />
 		<Unit filename="Suprema.h" />
-		<Unit filename="Utiles.cpp" />
-		<Unit filename="Utiles.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

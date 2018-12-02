@@ -272,3 +272,108 @@
 1543613196 source:c:\users\rperera\documents\github\obligatorio-p4\iterador.cpp
 	"Iterador.h"
 
+1543639842 source:c:\users\admin.portable\desktop\obligatorio-p4\bruja.cpp
+	"Bruja.h"
+
+1543543239 c:\users\admin.portable\desktop\obligatorio-p4\bruja.h
+	"String.h"
+	"HechizosBruja.h"
+
+1543775775 c:\users\admin.portable\desktop\obligatorio-p4\string.h
+	<iostream>
+	<stdio.h>
+
+1543775775 c:\users\admin.portable\desktop\obligatorio-p4\hechizosbruja.h
+	"Hechizo.h"
+
+1543775775 c:\users\admin.portable\desktop\obligatorio-p4\hechizo.h
+	"String.h"
+
+1543775775 source:c:\users\admin.portable\desktop\obligatorio-p4\brujas.cpp
+	"Brujas.h"
+	<stdio.h>
+
+1543775775 c:\users\admin.portable\desktop\obligatorio-p4\brujas.h
+	"Bruja.h"
+	"Suprema.h"
+	"Iterador.h"
+	"Fecha.h"
+
+1543541985 c:\users\admin.portable\desktop\obligatorio-p4\suprema.h
+	"Bruja.h"
+	"Fecha.h"
+
+1543775775 c:\users\admin.portable\desktop\obligatorio-p4\fecha.h
+	<iostream>
+	<limits>
+
+1543775775 c:\users\admin.portable\desktop\obligatorio-p4\iterador.h
+	<stdio.h>
+	"Bruja.h"
+
+1543639842 source:c:\users\admin.portable\desktop\obligatorio-p4\comun.cpp
+	"Comun.h"
+	"String.h"
+
+1543541984 c:\users\admin.portable\desktop\obligatorio-p4\comun.h
+	"Bruja.h"
+	"Suprema.h"
+	"String.h"
+
+1543683568 source:c:\users\admin.portable\desktop\obligatorio-p4\especial.cpp
+	"Especial.h"
+
+1543550407 c:\users\admin.portable\desktop\obligatorio-p4\especial.h
+	"Hechizo.h"
+
+1543775775 source:c:\users\admin.portable\desktop\obligatorio-p4\fecha.cpp
+	"Fecha.h"
+
+1543639842 source:c:\users\admin.portable\desktop\obligatorio-p4\hechizo.cpp
+	"Hechizo.h"
+
+1543775775 source:c:\users\admin.portable\desktop\obligatorio-p4\hechizosbruja.cpp
+	"HechizosBruja.h"
+
+1543639842 source:c:\users\admin.portable\desktop\obligatorio-p4\iterador.cpp
+	"Iterador.h"
+
+1543778466 source:c:\users\admin.portable\desktop\obligatorio-p4\main.cpp
+	"Fachada.h"
+
+1543777433 c:\users\admin.portable\desktop\obligatorio-p4\utiles.h
+
+1543778875 source:c:\users\admin.portable\desktop\obligatorio-p4\menu.cpp
+	"Menu.h"
+	"String.h"
+	<stdio.h>
+
+1543541985 c:\users\admin.portable\desktop\obligatorio-p4\menu.h
+	"String.h"
+
+1543775775 source:c:\users\admin.portable\desktop\obligatorio-p4\string.cpp
+	"String.h"
+	<cstdlib>
+
+1543639842 source:c:\users\admin.portable\desktop\obligatorio-p4\suprema.cpp
+	"Suprema.h"
+
+1543778427 c:\users\admin.portable\desktop\obligatorio-p4\fachada.h
+	<cstdlib>
+	"Fachada.h"
+	"Fecha.h"
+	"Bruja.h"
+	"Suprema.h"
+	"Comun.h"
+	"Especial.h"
+	"Brujas.h"
+	"Suprema.h"
+	"Comun.h"
+	"Hechizo.h"
+	<stdio.h>
+	<conio.h>
+	<clocale>
+
+1543778839 source:c:\users\admin.portable\desktop\obligatorio-p4\fachada.cpp
+	"Fachada.h"
+

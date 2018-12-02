@@ -50,8 +50,6 @@
 		<Unit filename="HechizosBruja.h" />
 		<Unit filename="Iterador.cpp" />
 		<Unit filename="Iterador.h" />
-		<Unit filename="Menu.cpp" />
-		<Unit filename="Menu.h" />
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
 		<Unit filename="Suprema.cpp" />
